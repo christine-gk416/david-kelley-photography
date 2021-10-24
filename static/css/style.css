@@ -1,5 +1,11 @@
-html {
-    height: 100%;
+html,
+body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: #fefae0;
 }
 
 .bg-green {
@@ -18,12 +24,10 @@ a.nav-link {
     font-size: 18px;
 }
 
-body {
+.home-hero {
     background: url('/media/david-kelley-background.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
-    font-family: 'Lato';
 }
 
 .main-heading {
@@ -31,12 +35,23 @@ body {
     color: #0a0e06;
 }
 
+h2 {
+    font-family: 'Zen Antique Soft', serif;
+    color: #0a0e06;
+}
+
+.primary-text {
+    font-family: 'Lato', sans-serif;
+    color: #0a0e06;
+    font-size: 18px;
+}
+
 .home-hero-padding {
-    padding-top: 20%;
+    padding-top: 13%;
 }
 
 .hero-btn-padding {
-    margin-left: 25%;
+    margin-left: 23%;
 }
 
 .btn-font {
@@ -46,3 +61,44 @@ body {
     min-width: 260px;
     border: 2px dashed #0a0e06;
 }
+
+hr {
+    border: 1px dashed;
+}
+
+.image-categories {
+    height: auto;
+    width: 100%;
+    border-radius: 15px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.overlay {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.overlay-hover:hover .image-categories{
+    opacity: 0.3;
+  }
+  
+  .overlay-hover:hover .overlay {
+    opacity: 1;
+    background: #606c38;
+  }
+  
+  .overlay-text {
+    background-color: #dda15e;
+    color: #0a0e06;
+    font-size: 18px;
+    padding: 16px 32px;
+    font-family: 'Ubuntu', sans-serif;
+    border: 1px dashed #0a0e06;
+  }

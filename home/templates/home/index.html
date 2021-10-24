@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-<div class="container h-100">
+<div class="h-100 home-hero">
     <div class="row h-100">
         <div class="col-xl-12 col-md-6 home-hero-padding">
             <h1 class="display-4 text-center main-heading">
@@ -23,5 +23,87 @@
             </div>
         </div>
     </div>
+    <hr>
 </div>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 mt-3 text-center">
+            <h2>Browse David's photography by category</h2>
+            <p class="primary-text">(Hover over each image to sort product images)</p>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="overlay-hover">
+                <a href="/">
+                    <img src="media/susquehanna1.jpeg" alt="Sunlight on Susquehanna River" class="image-categories">
+                    <div class="overlay">
+                        <div class="overlay-text">Shop all photos</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="overlay-hover">
+                <a href="/">
+                    <img src="media/glacier-yosemite-1.jpeg" alt="Glacier at Yosemite National Park" class="image-categories">
+                    <div class="overlay">
+                        <div class="overlay-text">Mountain photography</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="overlay-hover">
+                <a href="/">
+                    <img src="media/red-rocks1.jpg" alt="Red rock cliffs in Sedona, Arizona" class="image-categories">
+                    <div class="overlay">
+                        <div class="overlay-text">Desert photography</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="overlay-hover">
+                <a href="/">
+                    <img src="media/cape-mears1.jpg" alt="View over cliffs in Cape Mears, Oregan" class="image-categories">
+                    <div class="overlay">
+                        <div class="overlay-text">Ocean & beach photography</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="overlay-hover">
+                <a href="/">
+                    <img src="media/buffalos.jpg" alt="Buffalo at Yellowstone National Park" class="image-categories">
+                    <div class="overlay">
+                        <div class="overlay-text">Animal photography</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="overlay-hover">
+                <a href="/">
+                    <img src="media/susquehanna2.jpg" alt="Mist over the Suesquehanna River in Pennsylvania" class="image-categories">
+                    <div class="overlay">
+                        <div class="overlay-text">River & lake photography</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 {% endblock %}
