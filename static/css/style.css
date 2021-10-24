@@ -1,0 +1,20 @@
+.bg-green {
+    background: #243116;
+}
+
+.test {
+    size: 100px;
+    color:blue;
+}
+
+#brand {
+    color: #dda15e;
+    font-family: 'David Libre', serif;
+    font-size: 30px;
+}
+
+a.nav-link {
+    color: #fefae0;
+    font-family: 'Aleo', serif;
+    font-size: 18px;
+}

@@ -17,9 +17,14 @@
     {% block corecss %}
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
     {% endblock %}
 
     {% block extra_css %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aleo&family=David+Libre&family=Goudy+Bookletter+1911&family=Lato&display=swap" rel="stylesheet">
+    
     {% endblock %}
 
     {% block corejs %}
@@ -36,10 +41,38 @@
     <title>
         David Kelley Photography {% block extra_title %}{% endblock %}
     </title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23243116%22></rect><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2281%22>📸</text></svg>" />
   </head>
   <body>
 
-    <header class="container-fluid fixed-top"></header>
+    <header >
+      <nav class="navbar navbar-expand-lg bg-green">
+        <div class="container-fluid">
+          <a class="navbar-brand mb-2 ml-4 mb-lg-0" href="/">
+            <img src="media/david-kelley-logo.png" alt="David Kelley photography logo" width="50" height="44" class="d-inline-block align-text-top">
+          </a>
+          <div>
+            <p id="brand" class="me-auto mb-2 ml-4 mb-lg-0">David Kelley Photography</p>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 ml-4 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+      
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
     
     {% if messages %}
         <div class="message-container"></div>
@@ -49,6 +82,7 @@
     {% endblock %}
 
     {% block content %}
+    
     {% endblock %}
 
     {% block postloadjs %}
