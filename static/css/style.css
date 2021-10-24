@@ -1,10 +1,9 @@
-.bg-green {
-    background: #243116;
+html {
+    height: 100%;
 }
 
-.test {
-    size: 100px;
-    color:blue;
+.bg-green {
+    background: #243116;
 }
 
 #brand {
@@ -17,4 +16,33 @@ a.nav-link {
     color: #fefae0;
     font-family: 'Aleo', serif;
     font-size: 18px;
+}
+
+body {
+    background: url('/media/david-kelley-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Lato';
+}
+
+.main-heading {
+    font-family: 'Goudy Bookletter 1911', serif;
+    color: #0a0e06;
+}
+
+.home-hero-padding {
+    padding-top: 20%;
+}
+
+.hero-btn-padding {
+    margin-left: 25%;
+}
+
+.btn-font {
+    font-family: 'Ubuntu', sans-serif;
+    background: #DDA15E;
+    color: #0a0e06;
+    min-width: 260px;
+    border: 2px dashed #0a0e06;
 }
