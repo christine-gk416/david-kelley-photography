@@ -46,8 +46,14 @@ h2 {
     color: #0a0e06;
 }
 
+h3 {
+    font-family: 'Zen Antique Soft', serif;
+    color: #0a0e06;
+}
+
 .h2-background {
     background-color: #dda15e;
+    border-style: double;
 }
 
 .primary-text {
@@ -55,6 +61,7 @@ h2 {
     color: #0a0e06;
     font-size: 18px;
 }
+
 
 .home-hero-padding {
     padding-top: 13%;
@@ -74,6 +81,10 @@ h2 {
 
 hr {
     border: 1px dashed;
+}
+
+.footer-line {
+    border: 1px dashed #DDA15E;
 }
 
 .image-categories {
@@ -101,7 +112,6 @@ hr {
   
   .overlay-hover:hover .overlay {
     opacity: 1;
-    background: #606c38;
   }
   
   .overlay-text {
@@ -112,3 +122,37 @@ hr {
     font-family: 'Ubuntu', sans-serif;
     border: 1px dashed #0a0e06;
   }
+
+  .blog-read-more {
+    background-color: #606c38;
+    color: #fefae0;
+    font-size: 18px;
+    padding: 16px 32px;
+    font-family: 'Ubuntu', sans-serif;
+    border: 2px dashed #bc6c25;
+  }
+
+  .card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.home-blog1 {
+    padding-left: 10%;
+}
+
+.home-blog2 {
+    padding-right: 15%;
+    padding-left: 30%;
+}
+
+.card {
+    background: #fefae0;
+}
+
+.footer-text {
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #fefae0;
+}
+
