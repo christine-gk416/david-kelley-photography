@@ -52,13 +52,37 @@
 
     <header class="container-fluid fixed-top bg-green">
       <div class="row">
-          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+          <!-- <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
             <a class="navbar-brand" href="/">
               <img src="media/david-kelley-logo.png" alt="David Kelley photography logo" width="50" height="50" class="d-inline-block align-text-top">
             </a>
-          </div>
-          <div class="col-lg-4 mt-2 py-1 py-lg-0">
+          </div> -->
+        <div class="col-lg-4 mt-4 py-1 py-lg-0">
+            <ul class="float-left list-inline list-unstyled text-center my-0">
+            <li class="nav-item list-inline-item">
+                <a class="nav-link" href="#">About me</a>
+            </li>
+            <li class="nav-item list-inline-item">
+                <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item dropdown list-inline-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Shop photography
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+        </ul>
+        </div>
+          <div class="col-lg-4 mt-3 py-1 py-lg-0">
+            <a class="navbar-brand" href="/">
             <p id="brand">David Kelley Photography <i class="fab fa-pagelines"></i></p>
+            </a>
           </div>
          
           <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -101,6 +125,11 @@
           </div>
       </div>
   </header>
+
+
+
+
+  
     
     {% if messages %}
         <div class="message-container"></div>
@@ -112,6 +141,71 @@
     {% block content %}
     
     {% endblock %}
+
+    <footer class="bg-green text-white text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <a class="navbar-brand" href="/">
+                    <p id="brand">David Kelley Photography <i class="fab fa-pagelines"></i>
+                    </p>
+                </a>
+                    <p class="text-left">
+                        I'm a landscape photography from Harrisburg, Pennsylvania. Photography started out as a hobby for me & and a way for me to share my travels. Learn more about where I've been in my blog. You can also purchase gorgeous landscapes from all over the US and Ireland in the online shop.
+                    </p>
+                
+            </div>
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Links</h5>
+      
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-0">Links</h5>
+      
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 2</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 3</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Link 4</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+      </footer>
 
     {% block postloadjs %}
     {% endblock %}

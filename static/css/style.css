@@ -30,6 +30,12 @@ a.nav-link {
     height: calc(100vh - 164px);
 }
 
+.home-hero2 {
+    background: url('/media/david-kelley-background2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+}
+
 .main-heading {
     font-family: 'Goudy Bookletter 1911', serif;
     color: #0a0e06;
@@ -38,6 +44,10 @@ a.nav-link {
 h2 {
     font-family: 'Zen Antique Soft', serif;
     color: #0a0e06;
+}
+
+.h2-background {
+    background-color: #dda15e;
 }
 
 .primary-text {
