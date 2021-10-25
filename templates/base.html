@@ -40,6 +40,7 @@
     {% endblock %}
 
     {% block extra_js %}
+    <script src="static/js/scripts.js"></script>
     {% endblock %}
 
     <title>
@@ -51,13 +52,58 @@
   <body>
 
     <header class="container-fluid fixed-top bg-green">
+      
+
+
+
       <div class="row">
           <!-- <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
             <a class="navbar-brand" href="/">
               <img src="media/david-kelley-logo.png" alt="David Kelley photography logo" width="50" height="50" class="d-inline-block align-text-top">
             </a>
           </div> -->
-        <div class="col-lg-4 mt-4 py-1 py-lg-0">
+
+          <div class="col-3 mobile-navigation">
+            <button id="sized" class="menu">
+              <span></span>
+            </button>
+  
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content animated           zoomIn">
+                <div class="modal-header">
+                  <span class="close">×</span>
+                </div>
+        
+                <div class="modal-body nav">
+                  <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </div>
+
+                
+                <div class="modal-footer">
+                  <hr class="modal-line">
+                  
+                  <p>
+                    <strong>Your City</strong>
+                    <br>Max Mustermann &#149; +49 121 1734247 &#149;
+                    Randomstreet, 23424<br>
+                    <b>your@emailadress.com</b>
+                  </p>
+                </div>
+              </div>
+        
+            </div>
+          </div>
+
+
+
+
+        <div class="col-lg-4 mt-4 py-1 py-lg-0 desktop-nav">
             <ul class="float-left list-inline list-unstyled text-center my-0">
             <li class="nav-item list-inline-item">
                 <a class="nav-link" href="#">About me</a>
@@ -79,13 +125,13 @@
             </li>
         </ul>
         </div>
-          <div class="col-lg-4 mt-3 py-1 py-lg-0">
+          <div class="col-5 col-lg-4 mt-3 py-1 py-lg-0">
             <a class="navbar-brand" href="/">
             <p id="brand">David Kelley Photography <i class="fab fa-pagelines"></i></p>
             </a>
           </div>
          
-          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+          <div class="col-4 col-lg-4 my-auto py-1 py-lg-0">
               <ul class="list-inline list-unstyled text-center my-0">
                   <li class="list-inline-item dropdown">
                       <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -124,7 +170,11 @@
               </ul>
           </div>
       </div>
-  </header>
+  
+         
+
+
+    </header>
 
 
 
