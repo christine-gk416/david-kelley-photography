@@ -77,10 +77,10 @@
         
                 <div class="modal-body nav">
                   <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    
+                    <li><a href="#">About me</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Shop photography</a></li>
                   </ul>
                 </div>
 
@@ -89,9 +89,9 @@
                   <hr class="modal-line">
                   
                   <p>
-                    <strong>Your City</strong>
-                    <br>Max Mustermann &#149; +49 121 1734247 &#149;
-                    Randomstreet, 23424<br>
+                    <strong>Contact</strong>
+                    <br>David Kelley | +1 717-439-00001 |
+                  
                     <b>your@emailadress.com</b>
                   </p>
                 </div>
@@ -140,7 +140,7 @@
                               <p class="my-0">My Account</p>
                           </div>
                       </a>
-                      <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                      <div class="dropdown-menu border-1" aria-labelledby="user-options">
                           {% if request.user.is_authenticated %}
                               {% if request.user.is_superuser %}
                                   <a href="" class="dropdown-item">Product Management</a>

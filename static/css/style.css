@@ -24,6 +24,24 @@ a.nav-link {
     font-size: 18px;
 }
 
+a.nav-link:hover {
+    color: #dda15e;
+    text-decoration: underline;
+}
+
+.dropdown-menu {
+    background-color: #fefae0;
+}
+
+.dropdown-item {
+    font-family: 'Aleo', serif;
+    color: #0a0e06;
+}
+
+.dropdown-item:hover {
+    background-color: #dda15e;
+}
+
 .home-hero {
     background: url('/media/david-kelley-background.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -79,6 +97,11 @@ h3 {
     border: 2px dashed #0a0e06;
 }
 
+.btn-font:hover {
+    background:#606c38;
+    color: #fefae0;
+}
+
 hr {
     border: 1px dashed;
 }
@@ -123,13 +146,30 @@ hr {
     border: 1px dashed #0a0e06;
   }
 
+  .overlay-text:hover {
+      background: #606c38;
+  }
+
+  .overlay-link {
+    color: #0a0e06;
+  }
+
+  .overlay-link:hover {
+    color: #fefae0;
+  }
+
   .blog-read-more {
     background-color: #606c38;
     color: #fefae0;
     font-size: 18px;
     padding: 16px 32px;
     font-family: 'Ubuntu', sans-serif;
-    border: 2px dashed #bc6c25;
+    border: 2px dashed #DA962F;
+  }
+
+  .blog-read-more:hover {
+    background-color: #DA962F;
+    color: #0a0e06;
   }
 
   .card-horizontal {
