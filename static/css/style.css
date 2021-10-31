@@ -12,6 +12,10 @@ body {
     background: #243116;
 }
 
+.bg-beige {
+    background: #fefae0;
+}
+
 #brand {
     color: #dda15e;
     font-family: 'David Libre', serif;
@@ -197,6 +201,63 @@ hr {
     color: #fefae0;
 }
 
+/* About page*/
+
+.abstract-svg {
+    height: 500px;
+    width: auto;
+}
+
+.about-pic {
+    height: 450px;
+    width: auto;
+    position: absolute;
+    right: 15%;
+    top: 7%;
+    z-index: 2;
+    border-radius: 4em 8em;
+}
+
+.about-text {
+    right: 5%;
+}
+
+.form-padding {
+    padding: 5% 10%;
+}
+
+.form-border {
+    padding: 5%;
+    border: 2px dashed #bc6c25;
+}
+
+.contact-icon {
+    color: #606c38;
+}
+
+/* Main products page*/
+
+.products-hero {
+    background: url('/media/david-kelley-background3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+}
+
+.category-link {
+    color: #0a0e06;
+    float: left;
+    font-family: 'Aleo';
+    font-size: large;
+}
+
+.category-link:hover {
+    color: #243116;
+}
+
+.category-padding {
+    padding-left: 25%;
+}
+
 /* Mobile modal css */
 
 .mobile-navigation {
@@ -342,6 +403,7 @@ hr {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
+
 
 /* Mobile link styles */
 

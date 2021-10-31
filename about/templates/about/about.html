@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="h-100 products-hero">
+    <div class="row">
+        <div class="col-xl-12 col-md-6 home-hero-padding">
+            <h1 class="display-4 pb-5 text-center main-heading">
+                About me & contact info
+            </h1>
+            
+        </div>
+    </div>
+    <hr>
+</div>
+
+<div class="row h-100">
+    <div class="col-lg-6">
+        <img src="/media/dk-abstract-shape.svg" class="abstract-svg ml-3" alt="">
+        <img src="https://images.unsplash.com/photo-1526512340740-9217d0159da9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dmVydGljYWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" class="about-pic" alt="">
+    </div>
+    <div class="col-lg-6 mt-5 about-text">
+        <h3>
+            Test
+        </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim sem elit. Proin consequat libero vel
+            luctus sagittis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris interdum
+            magna vestibulum risus porttitor facilisis. Etiam tristique interdum elit et imperdiet. Duis pulvinar urna et sem ornare
+            eleifend. In tincidunt risus at augue tempor consectetur. Etiam vel nulla in risus vestibulum lacinia. Aliquam
+            consectetur est vel elementum interdum. Donec id vulputate est. Praesent euismod lobortis leo, non rhoncus purus pretium
+            et. Maecenas massa nulla, ultricies sit amet commodo eu, dapibus et purus. Praesent porttitor enim id neque iaculis
+            ullamcorper. Donec eu dictum enim.
+            
+            Fusce a lectus vehicula, posuere ipsum in, ultrices nibh. Cras id magna lectus. Proin efficitur mauris non lorem
+            imperdiet, sed eleifend arcu rutrum. Nunc auctor lectus in urna tristique, sed maximus sapien fermentum. Cras fringilla
+            mauris ut viverra sagittis. Nam a elit pellentesque, lobortis lectus vulputate, bibendum diam. Aliquam eget lacus ut
+            dolor accumsan feugiat commodo eget sapien. Nunc lacinia malesuada ex, nec efficitur nunc malesuada et.
+        </p>
+    </div>
+</div>
+
+<div class="h-50 products-hero">
+    <hr>
+    <div class="row">
+        <div class="col-xl-12 col-md-6">
+            <!--Section: Contact v.2-->
+            <section class="mb-4 form-padding">
+                <div class="bg-beige form-border">
+
+                    <!--Section heading-->
+                    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact me</h2>
+                    <!--Section description-->
+                    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate
+                        to
+                        contact us directly. Our team will come back to you within
+                        a matter of hours to help you.</p>
+
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-9 mb-md-0 mb-5">
+                            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                                <!--Grid row-->
+                                <div class="row">
+
+                                    <!--Grid column-->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="name" name="name" class="form-control">
+                                            <label for="name" class="">Your name</label>
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+
+                                    <!--Grid column-->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="email" name="email" class="form-control">
+                                            <label for="email" class="">Your email</label>
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+
+                                </div>
+                                <!--Grid row-->
+
+                                <!--Grid row-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="subject" name="subject" class="form-control">
+                                            <label for="subject" class="">Subject</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Grid row-->
+
+                                <!--Grid row-->
+                                <div class="row">
+
+                                    <!--Grid column-->
+                                    <div class="col-md-12">
+
+                                        <div class="md-form">
+                                            <textarea type="text" id="message" name="message" rows="2"
+                                                class="form-control md-textarea"></textarea>
+                                            <label for="message">Your message</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--Grid row-->
+
+                            </form>
+
+                            <div class="text-center text-md-left">
+                                <a class="btn btn-primary"
+                                    onclick="document.getElementById('contact-form').submit();">Send</a>
+                            </div>
+                            <div class="status"></div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-3 text-center">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="fas fa-map-marker-alt fa-2x contact-icon"></i>
+                                    <p>San Francisco, CA 94126, USA</p>
+                                </li>
+
+                                <li><i class="fas fa-phone mt-4 fa-2x contact-icon"></i>
+                                    <p>+ 01 234 567 89</p>
+                                </li>
+
+                                <li><i class="fas fa-envelope mt-4 fa-2x contact-icon"></i>
+                                    <p>contact@mdbootstrap.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                </div>
+
+            </section>
+            <!--Section: Contact v.2-->
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
