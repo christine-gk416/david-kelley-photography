@@ -195,9 +195,21 @@ hr {
     border: 2px solid;
 }
 
+/* Footer */
+
 .footer-text {
     font-family: 'Lato';
     font-size: 18px;
+    color: #fefae0;
+}
+
+.footer-links {
+    color: #DA962F;
+    font-family: 'Aleo', serif;
+    font-size: 18px;
+}
+
+.footer-links:hover {
     color: #fefae0;
 }
 
@@ -228,12 +240,26 @@ hr {
 
 .form-border {
     padding: 5%;
-    border: 2px dashed #bc6c25;
+    border: 2px solid #bc6c25;
 }
 
 .contact-icon {
     color: #606c38;
 }
+
+.form-button {
+    background-color: #fefae0;
+    color: #0a0e06;
+    font-size: 18px;
+    padding: 16px 32px;
+    font-family: 'Ubuntu', sans-serif;
+    border: 2px dashed #DA962F;
+}
+
+.form-button:hover {
+    background-color: #DA962F;
+    color: #0a0e06;
+  }
 
 /* Main products page*/
 

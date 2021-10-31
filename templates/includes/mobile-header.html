@@ -6,7 +6,7 @@
     <div id="myModal" class="modal">
       <!-- Modal content -->
       <div class="modal-content animated           zoomIn">
-        <div class="modal-header">
+        <div class="modal-header"> 
           <span class="close">×</span>
         </div>
 
@@ -15,7 +15,18 @@
             
             <li><a href="#">About me</a></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="#">Shop photography</a></li>
+            <li class="nav-item dropdown list-inline-item">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Shop photography
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+          </li>
           </ul>
         </div>
 
