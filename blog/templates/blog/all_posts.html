@@ -41,12 +41,12 @@
                 <div class="blog-grid">
                     <div class="blog-img">
                         <div class="date">{{ post.updated_on }}</div>
-                        <a href="#">
-                            <img src="https://via.placeholder.com/350x280/FFB6C1/000000" title="" alt="">
-                        </a>
+                        
+                            <img src="{{ post.image_url}}" class="blog-page-image"title="" alt="">
+                       
                     </div>
                     <div class="blog-info">
-                        <h5><a href="#">{{ post.title }}</a></h5>
+                        <h5><a href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a></h5>
                         <p class="text-white">{{post.content|slice:":200" }}</p>
                         <div class="btn-bar">
                             <a href="{% url 'post_detail' post.slug  %}" class="px-btn-arrow">

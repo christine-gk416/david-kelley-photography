@@ -85,14 +85,14 @@
                             <div class="card h-100 border-0">
                                 {% if product.image %}
                                 
-                                    <img class="card-img-top2 img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class="card-img-top2 product-card-shadow img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                
                                 {% else %}
                                 
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 
                                 {% endif %}
-                                <div class="card-footer2">
+                                <div class="card-footer2 product-card-shadow ">
                                     <div class="px-3 py-2">
                                         <div>
                                         <p class="mb-1 text-white text-center">{{ product.name }} <i class="fas fa-heart text-white"></i></p>

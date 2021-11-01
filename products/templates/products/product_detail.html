@@ -18,10 +18,10 @@
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="{% url 'products' %}">Back to Products</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+                        <li class="breadcrumb-item"><a href="{% url 'products' %}">Back to Products</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
                     </ol>
-                  </nav>
+                </nav>
                 <div class="image-container my-5">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">

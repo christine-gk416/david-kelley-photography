@@ -1,8 +1,15 @@
 from django.shortcuts import render
+from blog.models import Post
 
 # Create your views here.
 
 def index(request):
     """ A view to return the index page """
 
-    return render(request, 'home/index.html')
+    blog_home = Post.objects.all().order_by('updated_on')[:3]
+
+    context = {
+        'blog_home': blog_home,
+    }
+
+    return render(request, 'home/index.html', context)
