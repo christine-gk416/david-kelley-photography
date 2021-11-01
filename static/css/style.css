@@ -8,6 +8,8 @@ body {
   background: #fefae0;
 }
 
+/* Main nav */
+
 .bg-green {
     background: #243116;
 }
@@ -46,17 +48,7 @@ a.nav-link:hover {
     background-color: #dda15e;
 }
 
-.home-hero {
-    background: url('/media/david-kelley-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
-}
-
-.home-hero2 {
-    background: url('/media/david-kelley-background2.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
-}
+/* Main text styles */
 
 .main-heading {
     font-family: 'Goudy Bookletter 1911', serif;
@@ -78,12 +70,28 @@ h3 {
     border-style: double;
 }
 
-.primary-text {
+p {
     font-family: 'Lato', sans-serif;
-    color: #0a0e06;
     font-size: 18px;
 }
 
+.primary-text {
+    color: #0a0e06;
+}
+
+/* Home page */
+
+.home-hero {
+    background: url('/media/david-kelley-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+}
+
+.home-hero2 {
+    background: url('/media/david-kelley-background2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+}
 
 .home-hero-padding {
     padding-top: 13%;
@@ -284,6 +292,10 @@ hr {
     padding-left: 25%;
 }
 
+.search-padding {
+    padding-left: 25%;
+}
+
 .card-img-top2 {
     border-radius: 15px 15px 0px 0px;
 }
@@ -301,6 +313,21 @@ hr {
 .btn-light:hover {
     background:#DA962F;
     text-decoration: underline;
+}
+
+/* Product details page*/
+
+.breadcrumb {
+    background-color: #fefae0;
+    font-family: 'Aleo';
+}
+
+.breadcrumb-item a {
+    color:#606c38;
+}
+
+.breadcrumb-item a:hover {
+    color: #0a0e06;
 }
 
 /* Mobile modal css */

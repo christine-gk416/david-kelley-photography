@@ -15,7 +15,7 @@
     <div class="row h-100 mb-5">
         <div class="col-xl-12 col-md-6 home-hero-padding">
             <h1 class="display-4 text-center main-heading">
-                Adventurous landscape photography
+                Shop landscape photography
             </h1>
             
         </div>
@@ -48,16 +48,16 @@
         </li>
     </ul>
 
-    <div class="my-5">
+    <div class="my-5  search-padding">
             
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-            <form method="GET" action="">
+            <form method="GET" action="{% url 'products' %}">
                 <div class="input-group w-100">
-                    <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                    <div class="input-group-append">
+                    <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search products">
+                    <div class="input-group-append bg-green">
                         <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                             <span class="icon">
-                                <i class="fas fa-search"></i>
+                                <i class="fas fa-search text-white"></i>
                             </span>
                         </button>
                     </div>

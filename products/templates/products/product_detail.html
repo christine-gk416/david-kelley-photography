@@ -15,6 +15,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{% url 'products' %}">Back to Products</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+                    </ol>
+                  </nav>
                 <div class="image-container my-5">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
