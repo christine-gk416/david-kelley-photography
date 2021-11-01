@@ -278,14 +278,14 @@ hr {
 }
 
 .category-link {
-    color: #0a0e06;
+    color: #606c38;
     float: left;
     font-family: 'Aleo';
     font-size: large;
 }
 
 .category-link:hover {
-    color: #243116;
+    color: #0a0e06;
 }
 
 .category-padding {

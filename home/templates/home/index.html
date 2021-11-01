@@ -42,7 +42,7 @@
                 <a href="/">
                     <img src="media/susquehanna1.jpeg" alt="Sunlight on Susquehanna River" class="image-categories">
                     <div class="overlay">
-                        <div class="overlay-text"> <a class="overlay-link" href="#" role="button">Shop all photos</a>
+                        <div class="overlay-text"> <a class="overlay-link" href="{% url 'products' %}"  role="button">Shop all photos</a>
                         </div>
                     </div>
                 </a>
@@ -55,7 +55,7 @@
                         class="image-categories">
                     <div class="overlay">
                         <div class="overlay-text">
-                            <a href="#" class="overlay-link" role="button">Mountain photography</a>
+                            <a href="{% url 'products' %}?category=mountain_photography" class="overlay-link" role="button">Mountain photography</a>
                         </div>
                     </div>
                 </a>
@@ -67,7 +67,7 @@
                     <img src="media/red-rocks1.jpg" alt="Red rock cliffs in Sedona, Arizona" class="image-categories">
                     <div class="overlay">
                         <div class="overlay-text">
-                            <a href="#" class="overlay-link"  role="button">Desert photography</a>
+                            <a href="{% url 'products' %}?category=desert_photography" class="overlay-link"  role="button">Desert photography</a>
                         </div>
                     </div>
                 </a>
@@ -83,7 +83,7 @@
                         class="image-categories">
                     <div class="overlay">
                         <div class="overlay-text">
-                            <a href="#" class="overlay-link"  role="button">Ocean & beach photography</a>
+                            <a href="{% url 'products' %}?category=beach_and_ocean_photography"  class="overlay-link"  role="button">Ocean & beach photography</a>
                         </div>
                     </div>
                 </a>
@@ -95,7 +95,7 @@
                     <img src="media/buffalos.jpg" alt="Buffalo at Yellowstone National Park" class="image-categories">
                     <div class="overlay">
                         <div class="overlay-text">
-                            <a href="#" class="overlay-link"  role="button">Animal photography</a>
+                            <a href="{% url 'products' %}?category=animal_photography" class="overlay-link"  role="button">Animal photography</a>
                         </div>
                     </div>
                 </a>
@@ -108,7 +108,7 @@
                         class="image-categories">
                     <div class="overlay">
                         <div class="overlay-text">
-                            <a href="#" class="overlay-link"  role="button">River & lake photography</a>
+                            <a href="{% url 'products' %}?category=river_and_lake_photography" class="overlay-link"  role="button">River & lake photography</a>
                         </div>
                     </div>
                 </a>
