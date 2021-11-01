@@ -12,36 +12,18 @@
 {% block content %}
 
 <div class="h-100 home-hero">
-    <div class="row h-100">
+    <div class="row h-100 mb-5">
         <div class="col-xl-12 col-md-6 home-hero-padding">
             <h1 class="display-4 text-center main-heading">
                 Adventurous landscape photography
             </h1>
-            <div class="my-5">
-                <!-- <h4>
-                    <a href="" class="shop-now-button btn btn-lg rounded-0 hero-btn-padding btn-font py-3" role="button">Shop Now</a>
-                </h4> -->
             
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                    <form method="GET" action="">
-                        <div class="input-group w-100">
-                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                            <div class="input-group-append">
-                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                    <span class="icon">
-                                        <i class="fas fa-search"></i>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            
-            </div>
         </div>
     </div>
     <hr>
 </div>
+
+
 
 <div class="col-lg-12 col-md-6 mb-4 mb-md-0">
 
@@ -65,17 +47,94 @@
             <a href="#!" class="category-link ml-3">River & lake</a>
         </li>
     </ul>
-</div>
 
-
-
-<div class="container">
-    <div class="row">
-        <div class="col">
-            {{ products }}
+    <div class="my-5">
+            
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <form method="GET" action="">
+                <div class="input-group w-100">
+                    <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                    <div class="input-group-append">
+                        <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
+    
     </div>
 </div>
+
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Products</h2>
+                <hr class="w-50 mb-1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-sm-6 col-md-6 col-lg-3 col-xl-4 py-4">
+                            <div class="card h-100 border-0">
+                                {% if product.image %}
+                                
+                                    <img class="card-img-top2 img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                               
+                                {% else %}
+                                
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                
+                                {% endif %}
+                                <div class="card-footer2">
+                                    <div class="px-3 py-2">
+                                        <div>
+                                        <p class="mb-1 text-white text-center">{{ product.name }} <i class="fas fa-heart text-white"></i></p>
+                                        <p class="lead mb-0 text-left font-weight-bold text-center text-white">${{ product.price }}</p>
+                                    </div>
+                                        <div class="text-center">
+                                            
+                                            <a class="btn btn-light" href="{% url 'product_detail' product.id %}" role="button">Product details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                    
+                                
+                            </div>
+                        </div>
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}                        
+                        <!-- {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-xl-block mb-5">
+                                <hr>
+                            </div>
+                        {% endif %} -->
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
