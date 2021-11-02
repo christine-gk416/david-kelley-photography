@@ -307,6 +307,11 @@ hr {
     padding-left: 25%;
 }
 
+.product-img-dimensions {
+    height: auto;
+    width: 370px;
+}
+
 .card-img-top2 {
     border-radius: 15px 15px 0px 0px;
 }

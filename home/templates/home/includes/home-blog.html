@@ -1,0 +1,44 @@
+<div class="h-100 home-hero2">
+    <hr>
+    <div class="row h-100">
+        <div class="col-xl-12 col-md-6 mb-5 home-hero-padding">
+            <h2 class="text-center"><span class="h2-background">| Check out our latest blog posts about travel &
+                    photography |</span></h2>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                {% for post in blog_home %}
+                <div class="col-12 mt-3 ml-5 mb-5 {% cycle 'home-blog1' 'home-blog2' %}">
+                    
+                    
+                    <div class="card">
+                        <div class="card-horizontal">
+                            <div>
+                                <img class="home-blog-image" src="{{ post.image_url}}" alt="Card image cap">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="text-center">{{ post.title }}</h3>
+                                <p class="primary-text">{{post.content|slice:":200" }}
+                                </p>
+                                <br>
+                                <div class="text-center">
+                                    <a href="{% url 'post_detail' post.slug  %}" class="blog-read-more">Read full blog post</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated {{ post.updated_on }}</small>
+                        </div>
+                    </div>
+                    
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+</div>

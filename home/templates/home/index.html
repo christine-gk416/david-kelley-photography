@@ -2,30 +2,10 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
+{% include 'home/includes/home-banner.html'%}
 {% endblock %}
 
 {% block content %}
-<div class="h-100 home-hero">
-    <div class="row h-100">
-        <div class="col-xl-12 col-md-6 home-hero-padding">
-            <h1 class="display-4 text-center main-heading">
-                Adventurous landscape photography
-            </h1>
-            <div class="my-5">
-                <h4>
-                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 hero-btn-padding btn-font py-3" role="button">Shop Now</a>
-                </h4>
-            </div>
-        </div>
-    </div>
-    <hr>
-</div>
-
 
 <div class="container">
 
@@ -117,84 +97,6 @@
     </div>
 </div>
 
-<div class="h-100 home-hero2">
-    <hr>
-    <div class="row h-100">
-        <div class="col-xl-12 col-md-6 mb-5 home-hero-padding">
-            <h2 class="text-center"><span class="h2-background">| Check out our latest blog posts about travel &
-                    photography |</span></h2>
-        </div>
-
-        <div class="container-fluid">
-            <div class="row">
-                {% for post in blog_home %}
-                <div class="col-12 mt-3 ml-5 mb-5 {% cycle 'home-blog1' 'home-blog2' %}">
-                    
-                    
-                    <div class="card">
-                        <div class="card-horizontal">
-                            <div>
-                                <img class="home-blog-image" src="{{ post.image_url}}" alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="text-center">{{ post.title }}</h3>
-                                <p class="primary-text">{{post.content|slice:":200" }}
-                                </p>
-                                <br>
-                                <div class="text-center">
-                                    <a href="{% url 'post_detail' post.slug  %}" class="blog-read-more">Read full blog post</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated {{ post.updated_on }}</small>
-                        </div>
-                    </div>
-                    
-                   
-                   
-                    
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-
-       
-
-        <!-- <div class="container-fluid">
-            <div class="row">
-                <div class="col-8 mt-3 ml-5 mb-5 home-blog1">
-                    <div class="card">
-                        <div class="card-horizontal">
-                            <div>
-                                <img class="" src="media/sedona-blog1.jpg" alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="text-center">Card title</h3>
-                                <p class="primary-text">Some quick example text to build on the card title and make up
-                                    the bulk of the card's content.
-                                </p>
-                                <br>
-                                <div class="text-center">
-                                    <a href="#" class="blog-read-more">Read full blog post</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    </div>
-
-</div>
-
-
+{% include 'home/includes/home-blog.html'%}
 
 {% endblock %}
