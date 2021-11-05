@@ -1,3 +1,4 @@
+{% load crispy_forms_tags %}
 <div class="h-50 products-hero" id="contact">
     <hr>
     <div class="row">
@@ -17,7 +18,9 @@
 
                         <!--Grid column-->
                         <div class="col-md-9 mb-md-0 mb-5">
-                            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                            <form id="contact-form" name="contact-form" action="./?next={{ redirect_to }}" method="POST">
+                                {% csrf_token %}
+                                {{ form.name_of_field.errors }}
 
                                 <!--Grid row-->
                                 <div class="row">
@@ -25,8 +28,8 @@
                                     <!--Grid column-->
                                     <div class="col-md-6">
                                         <div class="md-form mb-0">
-                                            <input type="text" id="name" name="name" class="form-control">
-                                            <label for="name" class="">Your name</label>
+                                            
+                                            {{form.name|as_crispy_field}}
                                         </div>
                                     </div>
                                     <!--Grid column-->
@@ -34,8 +37,8 @@
                                     <!--Grid column-->
                                     <div class="col-md-6">
                                         <div class="md-form mb-0">
-                                            <input type="text" id="email" name="email" class="form-control">
-                                            <label for="email" class="">Your email</label>
+                                           
+                                            {{form.email|as_crispy_field}}
                                         </div>
                                     </div>
                                     <!--Grid column-->
@@ -46,10 +49,8 @@
                                 <!--Grid row-->
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="md-form mb-0">
-                                            <input type="text" id="subject" name="subject" class="form-control">
-                                            <label for="subject" class="">Subject</label>
-                                        </div>
+                                     
+                                        {{form.subject|as_crispy_field}}
                                     </div>
                                 </div>
                                 <!--Grid row-->
@@ -60,22 +61,22 @@
                                     <!--Grid column-->
                                     <div class="col-md-12">
 
-                                        <div class="md-form">
-                                            <textarea type="text" id="message" name="message" rows="2"
-                                                class="form-control md-textarea"></textarea>
-                                            <label for="message">Your message</label>
-                                        </div>
+                                       
+                                        {{form.message|as_crispy_field}}
 
                                     </div>
                                 </div>
                                 <!--Grid row-->
+
+                                <div class="text-center text-md-left mt-5">
+                                
+                                    <button type="submit" class="form-button">Send message</button>
+                                </div>
 
                             </form>
 
-                            <div class="text-center text-md-left mt-5">
-                                <a href="#" class="form-button" onclick="document.getElementById('contact-form').submit();">Send message</a>
-                            </div>
-                            <div class="status"></div>
+                            
+                            
                         </div>
                         <!--Grid column-->
 
