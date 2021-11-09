@@ -204,19 +204,19 @@ p {
 /* Home page */
 
 .home-hero {
-    background: url('/static/media/david-kelley-background.jpg') no-repeat center center fixed;
+    background: url('/media/david-kelley-background.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
 }
 
 .home-hero2 {
-    background: url('/static/media/david-kelley-background2.jpg') no-repeat center center fixed;
+    background: url('/media/david-kelley-background2.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
 }
 
 .profile-hero {
-    background: url('/static/media/david-kelley-bg4.jpg') no-repeat center center fixed;
+    background: url('/media/david-kelley-bg4.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
 }
@@ -411,7 +411,7 @@ hr {
 /* Main products page*/
 
 .products-hero {
-    background: url('/static/media/david-kelley-background3.jpg') no-repeat center center fixed;
+    background: url('/media/david-kelley-background3.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
 }
