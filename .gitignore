@@ -1,5 +1,6 @@
 core.Microsoft*
 core.python*
+venv
 env.py
 __pycache__/
 *.sqlite3
