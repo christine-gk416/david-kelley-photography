@@ -21,7 +21,7 @@
         <div class="col-md-4">
             <div class="overlay-hover">
                 <a href="{% url 'products' %}">
-                    <img src="susquehanna1.jpeg" alt="Sunlight on Susquehanna River" class="image-categories shadow-lg">
+                    <img src="{% static 'media/susquehanna1.jpg' %}" alt="Sunlight on Susquehanna River" class="image-categories shadow-lg">
                     <div class="overlay">
                         <div class="overlay-text"> <a class="overlay-link" href="{% url 'products' %}"  role="button">Shop all photos</a>
                         </div>
@@ -32,7 +32,7 @@
         <div class="col-md-4">
             <div class="overlay-hover">
                 <a href="{% url 'products' %}?category=mountain_photography">
-                    <img src="glacier-yosemite-1.jpeg" alt="Glacier at Yosemite National Park"
+                    <img src="{% static 'media/glacier-yosemite-1.jpeg' %}" alt="Glacier at Yosemite National Park" 
                         class="image-categories shadow-lg">
                     <div class="overlay">
                         <div class="overlay-text">
@@ -45,7 +45,7 @@
         <div class="col-md-4">
             <div class="overlay-hover">
                 <a href="{% url 'products' %}?category=desert_photography">
-                    <img src="media/red-rocks1.jpg" alt="Red rock cliffs in Sedona, Arizona" class="image-categories shadow-lg">
+                    <img src="{% static 'media/red-rocks1.jpg' %}" alt="Red rock cliffs in Sedona, Arizona" class="image-categories shadow-lg">
                     <div class="overlay">
                         <div class="overlay-text">
                             <a href="{% url 'products' %}?category=desert_photography" class="overlay-link"  role="button">Desert photography</a>
@@ -60,7 +60,7 @@
         <div class="col-md-4">
             <div class="overlay-hover">
                 <a href="{% url 'products' %}?category=beach_and_ocean_photography">
-                    <img src="/media/cape-mears1.jpg" alt="View over cliffs in Cape Mears, Oregan"
+                    <img src="{% static 'media/cape-mears1.jpg' %}" alt="View over cliffs in Cape Mears, Oregan" 
                         class="image-categories shadow-lg">
                     <div class="overlay">
                         <div class="overlay-text">
@@ -73,8 +73,8 @@
         <div class="col-md-4">
             <div class="overlay-hover">
                 <a href="{% url 'products' %}?category=animal_photography">
-                    <img src="media/buffalos.jpg" alt="Buffalo at Yellowstone National Park" class="image-categories">
-                    <div class="overlay">
+                    <img src="{% static 'media/buffalos.jpg' %}" alt="Buffalo at Yellowstone National Park" class="image-categories">
+                    <div class="overlay"> 
                         <div class="overlay-text">
                             <a href="{% url 'products' %}?category=animal_photography" class="overlay-link shadow-lg"  role="button">Animal photography</a>
                         </div>
