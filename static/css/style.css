@@ -204,19 +204,19 @@ p {
 /* Home page */
 
 .home-hero {
-    background: url('/media/david-kelley-background.jpg') no-repeat center center fixed;
+    background: url('david-kelley-background.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
 }
 
 .home-hero2 {
-    background: url('/media/david-kelley-background2.jpg') no-repeat center center fixed;
+    background: url('david-kelley-background2.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
 }
 
 .profile-hero {
-    background: url('/media/david-kelley-bg4.jpg') no-repeat center center fixed;
+    background: url('david-kelley-bg4.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
 }
