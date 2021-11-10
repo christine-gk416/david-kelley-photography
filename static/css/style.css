@@ -8,6 +8,10 @@ body {
   background: #fefae0;
 }
 
+.contact-border {
+    border: 1px solid black;
+}
+
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {

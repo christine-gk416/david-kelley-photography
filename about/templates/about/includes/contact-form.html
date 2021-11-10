@@ -1,4 +1,3 @@
-{% load crispy_forms_tags %}
 <div class="h-50 products-hero" id="contact">
     <hr>
     <div class="row">
@@ -10,63 +9,19 @@
                     <!--Section heading-->
                     <h2 class="h1-responsive font-weight-bold text-center my-4">Contact me</h2>
                     <!--Section description-->
-                    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate
+                    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions about a purchase or my photography? Please do not hesitate
                         to
-                        contact me directly. I'll get back to you shortly to adress your enquireies.</p>
+                        contact me directly. I'll get back to you shortly to adress your enquiries.</p>
 
                     <div class="row">
 
                         <!--Grid column-->
                         <div class="col-md-9 mb-md-0 mb-5">
-                            <form id="contact-form" name="contact-form" action="./?next={{ redirect_to }}" method="POST">
+                            <form id="contact-form" name="contact-form" action="" method="POST">
                                 {% csrf_token %}
                                 {{ form.name_of_field.errors }}
 
-                                <!--Grid row-->
-                                <div class="row">
-
-                                    <!--Grid column-->
-                                    <div class="col-md-6">
-                                        <div class="md-form mb-0">
-                                            
-                                            {{form.name|as_crispy_field}}
-                                        </div>
-                                    </div>
-                                    <!--Grid column-->
-
-                                    <!--Grid column-->
-                                    <div class="col-md-6">
-                                        <div class="md-form mb-0">
-                                           
-                                            {{form.email|as_crispy_field}}
-                                        </div>
-                                    </div>
-                                    <!--Grid column-->
-
-                                </div>
-                                <!--Grid row-->
-
-                                <!--Grid row-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                     
-                                        {{form.subject|as_crispy_field}}
-                                    </div>
-                                </div>
-                                <!--Grid row-->
-
-                                <!--Grid row-->
-                                <div class="row">
-
-                                    <!--Grid column-->
-                                    <div class="col-md-12">
-
-                                       
-                                        {{form.message|as_crispy_field}}
-
-                                    </div>
-                                </div>
-                                <!--Grid row-->
+                                {{ form|crispy }}
 
                                 <div class="text-center text-md-left mt-5">
                                 
