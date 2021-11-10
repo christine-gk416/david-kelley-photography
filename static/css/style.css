@@ -240,6 +240,7 @@ p {
 .btn-font:hover {
     background:#606c38;
     color: #fefae0;
+    text-decoration: underline;
 }
 
 hr {
