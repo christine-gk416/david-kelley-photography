@@ -26,3 +26,9 @@ span.onclick = function() {
        }
     }
 };
+
+// Tooltips //
+
+$(function () {
+   $('[data-toggle="tooltip"]').tooltip()
+ })
