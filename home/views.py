@@ -6,7 +6,7 @@ from blog.models import Post
 def index(request):
     """ A view to return the index page """
 
-    blog_home = Post.objects.all().order_by('updated_on')[:3]
+    blog_home = Post.objects.all().order_by('-updated_on')[:3]
 
     context = {
         'blog_home': blog_home,

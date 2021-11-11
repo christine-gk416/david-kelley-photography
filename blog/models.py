@@ -13,13 +13,13 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete= models.CASCADE,related_name='blog_posts')
     friendly_author_name = models.CharField(max_length=254, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    updated_on = models.DateTimeField(auto_now= True)
+    updated_on = models.DateField(auto_now= True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['-updated_on']
 
     def __str__(self):
         return self.title
@@ -35,7 +35,7 @@ class Comment(models.Model):
     active = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['created_on']
+        ordering = ['-created_on']
 
     def __str__(self):
         return 'Comment {} by {}'.format(self.body, self.name)

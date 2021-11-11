@@ -612,6 +612,13 @@ hr {
     transform: rotate(45deg);
 }
 
+/* Post details page */
+
+.blog-sidebar-image {
+    width: 100%;
+    height: auto;
+}
+
 /* Mobile modal css */
 
 .mobile-navigation {

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm, PostForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -8,6 +8,8 @@ def blog(request):
     """ A view to show all products, including sorting and search queries """
 
     posts = Post.objects.all()
+   
+    
 
     context = {
         'posts': posts,
@@ -16,27 +18,13 @@ def blog(request):
     return render(request, 'blog/all_posts.html', context)
 
 
-# def post_detail(request, slug):
-#     """ A view to show individual product details """
-
-#     post = get_object_or_404(Post, slug = slug)
-
-#     context = {
-#         'post': post,
-#     }
-
-#     return render(request, 'blog/post_detail.html', context)
-
-
-#Blog comment
-
 def post_detail(request, slug):
     # template_name = 'post_detail.html'
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.filter(active=True)
     new_comment = None
 
-
+#Blog comment
     # Comment posted
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
