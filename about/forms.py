@@ -8,14 +8,16 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = '__all__'
 
+    
+    helper = FormHelper()
+    helper.layout = Layout(
+    Div(
+        Field('name', wrapper_class='col-xl-6'),
+        Field('email', wrapper_classs='col-xl-6'),
+        css_class='form-row')
+    )
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.layout = Layout(
-        Div(
-            Field('name', wrapper_class='col-xl-6 mb-0'),
-            Field('email', wrapper_classs='col-xl-6 mb-0'),
-        )
-    )
         for field_name, field in self.fields.items():
                 field.widget.attrs['class'] = 'contact-border rounded-0'

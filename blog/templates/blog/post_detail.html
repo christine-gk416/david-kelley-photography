@@ -33,12 +33,18 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
                             <h1>{{ post.title }}</h1>
-                            <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
+                            
                             <span class="meta">
                                 Posted by 
                                 {{ post.friendly_author_name }}
                                 on {{ post.updated_on }}
                             </span>
+                            {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <a href="{% url 'edit_post' post.slug %}">Edit</a> | 
+                                        <a class="text-danger" href="{% url 'delete_post' post.slug %}">Delete</a>
+                                    </small>
+                        {% endif %}
                         </div>
                     </div>
                 </div>

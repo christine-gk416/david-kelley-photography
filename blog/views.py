@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def blog(request):
     """ A view to show all products, including sorting and search queries """
@@ -59,3 +61,71 @@ def post_detail(request, slug):
 
     return render(request, 'blog/post_detail.html', 
                     context)
+
+
+@login_required
+def add_post(request):
+    """ Add a blog post to the site """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only blog admins can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save()
+            messages.success(request, 'Successfully added post!')
+            return redirect(reverse('post_detail', args=[post.slug]))
+        else:
+            messages.error(request, 'Failed to add post. Please ensure the form is valid.')
+    else:
+        form = PostForm()
+        
+    template = 'blog/add_post.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_post(request, slug):
+    """ Edit a blog post  """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only blog admins can do that.')
+        return redirect(reverse('home'))
+
+    post = get_object_or_404(Post, slug=slug)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('post_detail', args=[post.slug]))
+        else:
+            messages.error(request, 'Failed to update post. Please ensure the form is valid.')
+    else:
+        form = PostForm(instance=post)
+        messages.info(request, f'You are editing {post.title}')
+
+    template = 'blog/edit_post.html'
+    context = {
+        'form': form,
+        'post': post,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_post(request, slug):
+    """ Delete a blog post """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only blog admins can do that.')
+        return redirect(reverse('home'))
+
+    post = get_object_or_404(Post, slug=slug)
+    post.delete()
+    messages.success(request, 'Post deleted!')
+    return redirect(reverse('blog'))
