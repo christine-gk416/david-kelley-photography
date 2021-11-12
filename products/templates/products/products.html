@@ -34,8 +34,8 @@
                                 <div class="card-footer2 product-card-shadow ">
                                     <div class="px-3 py-2">
                                         <div>
-                                        <p class="mb-1 text-white text-center">{{ product.name }} <i class="fas fa-heart text-white"></i></p>
-                                        <p class="lead mb-0 text-left font-weight-bold text-center text-white">${{ product.price }}</p>
+                                        <p class="mb-2 text-white text-center">{{ product.name }} <i class="fas fa-heart text-white"></i></p>
+                                        <p class="lead mb-2 text-left font-weight-bold text-center text-white">${{ product.price }}</p>
                                     </div>
                                         <div class="text-center">
                                             
@@ -44,10 +44,14 @@
                                     </div>
 
                                     {% if request.user.is_superuser %}
-                                    <small class="ml-3">
-                                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                    </small>
+                                
+
+                                        <div class="my-3 text-center">
+                                            <a class="btn btn-sm btn-primary" role="button" href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                            
+                                            <a class="btn btn-sm btn-danger" role="button" href="{% url 'delete_product' product.id %}">Delete
+                                            </a>
+                                        </div>
                                     {% endif %}
                                 </div>
                                 

@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="mb-4">Shopping cart</h2>
+            <h1 class="mb-4 text-center">Shopping cart</h1>
             <hr>
         </div>
     </div>
@@ -91,9 +91,9 @@
                         {% endfor %}
                         <tr>
                             <td colspan="5" class="pt-5 text-right">
-                                <h6><strong>cart Total: ${{ total|floatformat:2 }}</strong></h6>
+                                <h6><strong>Cart Total: ${{ total|floatformat:2 }}</strong></h6>
                                 <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                <h3 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h3>
                                 {% if free_delivery_delta > 0 %}
                                     <p class="mb-1 text-danger">
                                         You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
@@ -103,18 +103,20 @@
                         </tr>
                         <tr>
                             <td colspan="5" class="text-right">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
-                                </a>
-                                <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                    <span class="text-uppercase">Secure Checkout</span>
-                                    <span class="icon">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </a>
+                                <div class="mt-5">
+                                    <a href="{% url 'products' %}" class="mr-3 mt-5 back-shop-link">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="product-btn-font">Keep Shopping</span>
+                                    </a>
+                                    <a href="{% url 'checkout' %}" class="buy-btn product-btn-font">
+                                        <span>Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                <div>
                             </td>
                         </tr>
                     </table>

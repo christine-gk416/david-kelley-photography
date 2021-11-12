@@ -1,14 +1,14 @@
 <!-- Sidebar Widgets Column -->
-<div class="col-md-4 float-right ">
+<div class="col-md-4 float-right">
 <div class="card my-4">
         <h5 class="card-header text-center">Check out some of my photography</h5>
     <div class="card-body">
         <img src="{{ post.image_url}}" class="blog-sidebar-image mb-5" title="" alt="{{post.title}}">
-        <p class="card-text">If you enjoyed this post, consider purchasing some of the photography in my shop.</p>
-        
-        <a href="{% url 'products' %}"
-           class="btn btn-outline-dark"><strong>Shop Now!<strong></a>
-        
+        <p class="card-text text-center mb-3">If you enjoyed this post, consider purchasing some of the photography in my shop.</p>
+        <div class="text-center">    
+            <a href="{% url 'products' %}"
+            class="btn-lg btn-dark"><strong>Shop Now!<strong></a>
+        </div>   
     </div>
 </div>
 </div>
