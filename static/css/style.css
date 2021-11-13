@@ -196,6 +196,12 @@ h3 {
     color: #0a0e06;
 }
 
+h4 {
+    font-family: 'Lato', serif;
+    color: #0a0e06;
+    font-size: 24px;
+}
+
 .h2-background {
     background-color: #dda15e;
     border-style: double;
@@ -228,6 +234,10 @@ p {
     background: url('/media/david-kelley-bg4.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
+}
+
+.shipping-banner {
+    background-color: #dda15e;
 }
 
 .home-hero-padding {
@@ -461,6 +471,18 @@ hr {
 
 .product-card-shadow {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.5);
+}
+
+a.select-heart {
+    color: red;
+}
+
+a.wishlist-heart {
+    color:#fefae0;
+}
+
+a.wishlist-heart:hover {
+    color: red;
 }
 
 .btn-light {

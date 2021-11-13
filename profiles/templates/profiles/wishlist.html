@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+{% include 'profiles/includes/profile-banner.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+        
+<div class="container-fluid">
+
+    <div class="row">
+         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+         {% include 'profiles/includes/wishlist_breadcrumbs.html' %}
+         </div>  
+    </div>        
+    <div class="row">
+        
+        <div class="col text-center mt-3">
+            <h1 class="logo-font">Wishlist</h1>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="product-container col-10 offset-1">
+            <div class="row mt-1 mb-2"></div>
+            <div class="row">
+                {% if wishlist %}
+                {% for product in wishlist  %}
+                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-4 py-4">
+                        <div class="card h-100 border-0">
+                            {% if product.image %}
+                            
+                                <img class="card-img-top2 product-card-shadow img-fluid product-img-dimensions" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            
+                            {% else %}
+                            
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            
+                            {% endif %}
+                            <div class="card-footer2 product-card-shadow ">
+                                <div class="px-3 py-2">
+                                    <div>
+                                    <p class="mb-2 text-white text-center">{{ product.name }} 
+                                   </p>
+                                    <p class="lead mb-2 text-left font-weight-bold text-center text-white">${{ product.price }}</p>
+                                </div>
+                                    <div>
+                                        <div class="float-right mb-3">
+                                            
+                                            <a type="button" class="btn btn-light" href="{% url 'product_detail' product.id %}" role="button">Product details</a>
+                                        </div>
+                                        <div class="float-left mb-3">
+                                            <a type="button" class="btn btn-remove-wishlist" href="{% url 'user_wishlist' product.id %}">Remove from Wishlist</a>
+                                        </div> 
+                                    </div>    
+                                </div>
+
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                {% endfor %}
+                {% else %}
+                    <p class="card-text">No products have been added to your wishlist yet</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

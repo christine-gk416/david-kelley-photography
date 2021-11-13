@@ -1,11 +1,44 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.db.models import Exists, OuterRef
 
 from checkout.models import Order
-
+from products.models import Product
 from .models import UserProfile
 from .forms import UserProfileForm
+
+@login_required
+def add_to_wishlist(request, id):
+    product = get_object_or_404(Product, id=id)
+    
+    # liked_products = product.objects.annotate(
+    #     liked=Exists(product.users_wishlist.through.objects.filter(
+    #         UserProfile=request.user, product=OuterRef('pk')
+    #     ))
+    # ).filter(is_approved=True)
+
+    if product.users_wishlist.filter(id=request.user.id).exists():
+        product.users_wishlist.remove(request.user)
+        messages.success(request, product.name + " has been removed from your WishList")
+    else:
+        product.users_wishlist.add(request.user)
+        messages.success(request, "Added " + product.name + " to your WishList")
+
+    # liked_products = product.objects.filter(users_wishlist=request.user)
+
+    # context ={
+    #     'liked_products': liked_products,
+    # }
+
+    return HttpResponseRedirect(request.META["HTTP_REFERER"])
+
+
+@login_required
+def wishlist(request):
+    products = Product.objects.filter(users_wishlist=request.user)
+    return render(request, "profiles/wishlist.html", {"wishlist": products})
 
 
 @login_required

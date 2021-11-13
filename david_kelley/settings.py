@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    # 'posts.apps.PostsConfig',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -103,6 +102,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

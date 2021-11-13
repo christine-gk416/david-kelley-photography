@@ -33,6 +33,13 @@
                     <h3 class="mb-2">{{ product.name }}</h3>
                     <p class="lead mb-2 text-left font-weight-bold">${{ product.price }}</p>
 
+                    <div class="my-3">
+                            <a class="btn btn-lg btn-outline-dark" role="button" href="{% url "user_wishlist" product.id %}">
+                            Add to wishlist
+                            <i class="fas fa-clipboard-list fa-lg"></i>
+                            </a>   
+                    </div>
+
                     {% if request.user.is_superuser %}
                         <div class="my-3">
                             <a class="btn btn-sm btn-primary" role="button" href="{% url 'edit_product' product.id %}">Edit</a> | 

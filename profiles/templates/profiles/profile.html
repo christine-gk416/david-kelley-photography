@@ -14,7 +14,8 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">My Profile</h2>
+            <h1 class="logo-font mb-4 text-center">My Profile</h1>
+            
             <hr>
         </div>
     </div>
@@ -28,6 +29,10 @@
             </form>
         </div>
         <div class="col-12 col-lg-6">
+
+            <div class="row justify-content-center my-3">
+            <a class="btn btn-wishlist" href="{% url 'wishlist' %}" >View my Wishlist <i class="fas fa-clipboard-list fa-lg"></i><a>
+            </div>
             <p class="text-muted">Order History</p>
             <div class="order-history table-responsive">
                 <table class="table table-sm table-borderless">
@@ -69,6 +74,8 @@
         </div>
     </div>
 </div>
+
+{% comment %} {% include 'profiles/includes/wishlist.html' %} {% endcomment %}
 {% endblock %}
 
 {% block postloadjs %}

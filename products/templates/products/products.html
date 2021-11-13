@@ -7,10 +7,16 @@
 
 {% block content %}
 
+<div id="delivery-banner" class="row text-center mb-2">
+    <div class="col shipping-banner text-black">
+        <h4 class="my-1"><strong>Free delivery on orders over ${{ free_delivery_threshold }}!</strong></h4>                
+    </div>            
+</div>
+
 {% include 'products/includes/category-links.html' %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center mt-3">
+            <div class="col text-center mt-2">
                 <h2 class="logo-font">Products</h2>
                 <hr class="w-50 mb-1">
             </div>
@@ -34,7 +40,23 @@
                                 <div class="card-footer2 product-card-shadow ">
                                     <div class="px-3 py-2">
                                         <div>
-                                        <p class="mb-2 text-white text-center">{{ product.name }} <i class="fas fa-heart text-white"></i></p>
+                                        <p class="mb-2 text-white text-center">{{ product.name }} 
+                                            {% if user.id in liked_products %}
+                                            <a href="{% url "user_wishlist" product.id %}" class="select-heart pl-2" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
+                                                <i class="fas fa-heart fa-lg">
+                                                </i>
+                                            </a>
+                                            
+                                        {% else %}
+                                            <a href="{% url "user_wishlist" product.id %}" class="wishlist-heart pl-2" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
+                                                <i class="fas fa-heart fa-lg">
+                                                </i>
+                                            </a>
+
+                                           {% endif %} 
+                                            
+                                            
+                                        </p>
                                         <p class="lead mb-2 text-left font-weight-bold text-center text-white">${{ product.price }}</p>
                                     </div>
                                         <div class="text-center">
