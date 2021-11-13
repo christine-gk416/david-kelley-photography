@@ -9,8 +9,6 @@ def blog(request):
 
     posts = Post.objects.all()
    
-    
-
     context = {
         'posts': posts,
     }

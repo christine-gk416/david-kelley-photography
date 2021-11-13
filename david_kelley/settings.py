@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    # 'posts.apps.PostsConfig',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -61,6 +62,7 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'profiles',
+    'tempus_dominus',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

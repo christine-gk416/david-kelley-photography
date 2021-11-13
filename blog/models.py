@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.text import slugify
+from django.utils import timezone
 
 
 STATUS = (
@@ -11,12 +13,18 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete= models.CASCADE,related_name='blog_posts')
-    friendly_author_name = models.CharField(max_length=254, null=True, blank=True)
+    author_name = models.CharField(max_length=254, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     updated_on = models.DateField(auto_now= True)
     content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateField(default=timezone.now)
     status = models.IntegerField(choices=STATUS, default=0)
+
+
+    def save(self, *args, **kwargs): 
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
     class Meta:
         ordering = ['-updated_on']

@@ -26,8 +26,8 @@
                 
                 <span>
                     <strong>Posted by 
-                    {{ post.friendly_author_name }}
-                    on {{ post.updated_on }}
+                    {{ post.author_name }}
+                    on {{ post.created_on }}
                     <strong>
                 </span>
                 {% if request.user.is_superuser %}
