@@ -1,3 +1,4 @@
+import random
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -41,8 +42,14 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    related_products = list(product.category.products.exclude(id=product.id))
+    
+    if len(related_products) >= 1:
+        related_products = random.sample(related_products, 1)
+
     context = {
         'product': product,
+        'related_products': related_products
     }
 
     return render(request, 'products/product_detail.html', context)
