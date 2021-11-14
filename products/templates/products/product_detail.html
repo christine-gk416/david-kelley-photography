@@ -54,13 +54,16 @@
                 <form class="form"  method="POST" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
                     <div class="form-row">
-                        {% with product.has_sizes as s %}
+                        {% with product.has_colors as s %}
                         {% if s %}
                             <div class="col-12">
-                                <p><strong>Size:</strong></p>
-                                <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                    <option value="s">8x10</option>
-                                    <option value="lg">12x18</option>
+                                <p><strong>Frame mat color:</strong></p>
+                                <select class="form-control rounded-0 w-50" name="product_color" id='id_product_color'>
+                                    <option disabled selected value="pick-color">Pick a color</option>
+                                    <option class="input-blue" value="blue">Blue</option>
+                                    <option value="green">Green</option>
+                                    <option value="brown">Brown</option>
+                                    <option value="cream">Cream</option>
                                 </select>
                             </div>
                         {% endif %}
@@ -92,7 +95,7 @@
                             </div>
                         </div>
     
-                        <div class="col-12 mt-5">
+                        <div class="col-12 mt-5 mb-3">
                             <a href="{% url 'products' %}" class="mr-3 mt-5 back-shop-link">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left fa-sm"></i>
@@ -109,58 +112,8 @@
         </div>
     </div>
 
+{% include 'products/includes/related_products.html' %}
 
-
-<div class="row">
-{% if related_products%}
-        
-    <div class="product-container col-10 offset-1">
-        {% for product in related_products%}
-
-        <div class="row">
-                <hr class="w-50 mb-1">
-            <div class="col-12 text-center mt-3">
-                <h2>Related Products</h2>
-                <hr class="w-50 mb-1">
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3 col-xl-4 py-4">
-                <div class="card h-100 border-0">
-                    {% if product.image %}
-                    
-                        <img class="card-img-top2 product-card-shadow img-fluid product-img-dimensions" src="{{ product.image.url }}" alt="{{ product.name }}">
-                    
-                    {% else %}
-                    
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                    
-                    {% endif %}
-                    <div class="card-footer2 product-card-shadow">
-                        <div class="px-3 py-2">
-                            
-                            <p class="mb-2 text-white text-center">{{ product.name }} 
-                            </p>
-                            <p class="lead mb-2 text-left font-weight-bold text-center text-white">${{ product.price }}
-                            </p>
-                        </div>
-                        <div class="text-center mb-2">
-                            
-                            <a class="btn btn-light" href="{% url 'product_detail' product.id %}" role="button">Product details</a>
-                        </div>
-
-                    </div>
-                    
-                    
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    
-    {% else %}
-    <div></div>
-    {% endif %}
-</div>
-    
 {% endblock %}
 
 {% block postloadjs %}

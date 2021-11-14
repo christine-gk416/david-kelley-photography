@@ -564,6 +564,15 @@ a.back-shop-link:hover {
     color: #fefae0;
     text-decoration: underline;
 }
+
+.product-img-dimensions2 {
+    width: 380px;
+}
+
+select.input-blue {
+    background-color: blue!important;
+}
+
 /* Main blog page */
 
 .blog-page-image {
