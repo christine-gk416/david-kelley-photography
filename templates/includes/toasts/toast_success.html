@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-9">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                            <p class="my-0 small">Mat color: {% if item.product.has_colors %}{{ item.color|upper }}{% else %}N/A{% endif %}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                     </div>
@@ -45,12 +45,14 @@
                             Spend <strong>${{ free_delivery_delta }}</strong> more to get free next day delivery!
                         </p>
                     {% endif %}
-                    <a href="{% url 'cart' %}" class="btn btn-black btn-block rounded-0">
+                    <div class="text-center ">
+                    <a href="{% url 'cart' %}" class="btn btn-dark btn-lg rounded-0">
                         <span class="text-uppercase">Go To Secure Checkout</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
                         </span>
                     </a>
+                    </div>
                 </div>
             </div>
         {% endif %}
