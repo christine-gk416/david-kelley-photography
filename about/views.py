@@ -10,9 +10,9 @@ def about(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            email_subject = f'New contact from {form.cleaned_data["name"]} at {form.cleaned_data["email"]}: {form.cleaned_data["subject"]}'
-            email_message = form.cleaned_data['message']
-            send_mail(email_subject, email_message, settings.CONTACT_EMAIL, settings.ADMIN_EMAIL)
+            # email_subject = f'New contact from {form.cleaned_data["name"]} at {form.cleaned_data["email"]}: {form.cleaned_data["subject"]}'
+            # email_message = form.cleaned_data['message']
+            # send_mail(email_subject, email_message, settings.CONTACT_EMAIL, settings.ADMIN_EMAIL)
             messages.success(request, "Thanks for your message! We'll be in touch soon.")
             return redirect('about')
         else:
