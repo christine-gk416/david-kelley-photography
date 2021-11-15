@@ -72,6 +72,12 @@
                 {% else %}
                 <div class=" col-12">
                     <p class="text-center my-4"><strong>No products have been added to your wishlist yet</strong></p>
+                     <a href="{% url 'profile' %}" class="back-shop-link">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left "></i>
+                    </span>
+                    <span>Back to Profile</span>
+                </a>
                 </div>    
                 {% endif %}
             </div>

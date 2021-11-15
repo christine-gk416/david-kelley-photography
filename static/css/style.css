@@ -63,7 +63,11 @@ body {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #4464AD; /* text-info */
+}
+
+.auth-font-btn{
+    color: #fff!important;
 }
 
 

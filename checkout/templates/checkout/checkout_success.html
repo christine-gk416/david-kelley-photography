@@ -14,18 +14,18 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">Thank You</h2>
+            <h2 class="logo-font mb-4 text-center">Thank You</h2>
             <hr>
-            <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+            <p class="text-black text-center">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-12 col-lg-7">
-            <div class="order-confirmation-wrapper p-2 border">
+            <div class="order-confirmation-wrapper p-2 ">
                 <div class="row">
-                    <div class="col">
-                        <small class="text-muted">Order Info:</small>
+                    <div class="col text-center">
+                        <small class="text-muted ">Order Info:</small>
                     </div>
                 </div>
 
@@ -186,20 +186,20 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-lg-7 text-right">
+        <div class="col-12 text-center mt-3">
             {% if from_profile %}
-            <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+            <a href="{% url 'profile' %}" class="back-shop-link my-2">
                 <span class="icon mr-2">
                     <i class="fas fa-angle-left"></i>
                 </span>
-                <span class="text-uppercase">Back to Profile</span>
+                <span class="product-btn-font">Back to Profile</span>
             </a>
             {% else %}
-            <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
+            <a href="{% url 'blog' %}" class="back-shop-link my-2 text-center">
                 <span class="icon mr-2">
-                    <i class="fas fa-gifts"></i>
+                    <i class="fab fa-readme fa-lg"></i>
                 </span>
-                <span class="text-uppercase">Now check out the latest deals!</span>
+                <span class="product-btn-font">Check out my blog for details about my photography</span>
             </a>
             {% endif %}
         </div>

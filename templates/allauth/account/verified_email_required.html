@@ -2,6 +2,10 @@
 
 {% load i18n %}
 
+{% block page_header %}
+{% include 'profiles/includes/profile-banner.html' %}
+{% endblock %}
+
 {% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
 
 {% block inner_content %}
