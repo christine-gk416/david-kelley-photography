@@ -66,10 +66,12 @@ def add_post(request):
             messages.error(request, 'Failed to add post. Please ensure the form is valid.')
     else:
         form = PostForm()
-        
+
+    posts = Post.objects.all()    
     template = 'blog/add_post.html'
     context = {
         'form': form,
+        'posts': posts,
     }
 
     return render(request, template, context)

@@ -1,34 +1,12 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block page_header %}
-<div class="h-100 home-hero2">
-    <div class="row">
-        <div class="col-xl-12 col-md-6 mb-5 home-hero-padding">
-            <h1 class="display-4 text-center main-heading">
-                All blog posts
-            </h1>
-        </div>
-    </div>    
-    <hr>
-</div>  
-{% endblock %}
-
-{% block content %}  
-
-<section>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-7 text-center">
-                <div class="section-title">
-                    <h2>Latest News</h2>
-                    <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
+<div class="container">
+    <div class="row my-5">
             {% for post in posts %}
-            {% if post.status == 1 %}
+            {% if post.status == 0 %}
+               <hr class="w-50 mb-1">
+            <div class="col-12 text-center my-3">
+                <h2>Blog post drafts</h2>
+                <hr class="w-50 mb-1">
+            </div>
             <div class="col-lg-4">
                 
                 <div class="blog-grid">
@@ -75,11 +53,9 @@
                     
                 </div>
             </div>
+        
             {% endif %}
             {% endfor %}
             
         </div>
-    </div>
-</section>
-
-{% endblock %}
+    </div> 

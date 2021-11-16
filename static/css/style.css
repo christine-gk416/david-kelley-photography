@@ -339,6 +339,7 @@ hr {
   .blog-read-more:hover {
     background-color: #DA962F;
     color: #0a0e06;
+    text-decoration: underline;
   }
 
   .card-horizontal {
