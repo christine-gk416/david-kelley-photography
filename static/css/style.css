@@ -430,6 +430,7 @@ hr {
 .form-button:hover {
     background-color: #DA962F;
     color: #0a0e06;
+    text-decoration: underline;
   }
 
 /* Main products page*/

@@ -21,17 +21,9 @@
                                 {% csrf_token %}
                                 {{ form.name_of_field.errors }}
 
-                                {{ form | crispy }}
+                                {% crispy form %}
 
-                                <div class="text-center text-md-left mt-5">
-                                
-                                    <button type="submit" class="form-button">Send message</button>
-                                </div>
-
-                            </form>
-
-                            
-                            
+                            </form> 
                         </div>
                         <!--Grid column-->
 
