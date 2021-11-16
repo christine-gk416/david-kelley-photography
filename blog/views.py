@@ -3,6 +3,7 @@ from .models import Post, Comment
 from .forms import CommentForm, PostForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 
 def blog(request):
     """ A view to show all products, including sorting and search queries """
@@ -37,7 +38,6 @@ def post_detail(request, slug):
     else:
         comment_form = CommentForm()
 
-
     context = {
         'post': post,
         'comments': comments,
@@ -47,6 +47,16 @@ def post_detail(request, slug):
 
     return render(request, 'blog/post_detail.html', 
                     context)
+
+
+def like_post(request, slug):
+    post = get_object_or_404(Post, id=request.POST.get('like_id'))
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+    else:
+         post.likes.add(request.user)
+    
+    return HttpResponseRedirect(reverse ('post_detail', args=[str(slug)]))
 
 
 @login_required

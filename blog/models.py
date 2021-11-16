@@ -19,6 +19,7 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateField(default=timezone.now)
     status = models.IntegerField(choices=STATUS, default=0)
+    likes = models.ManyToManyField(User, related_name="blog_likes")
 
 
     def save(self, *args, **kwargs): 
