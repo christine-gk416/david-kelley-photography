@@ -9,6 +9,7 @@
         <div class="container-fluid">
             <div class="row">
                 {% for post in blog_home %}
+                {% if post.status == 1 %}
                 <div class="col-12 mt-3 ml-5 mb-5 {% cycle 'home-blog1' 'home-blog2' %}">
                     
                     
@@ -35,6 +36,7 @@
                     </div>
                     
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
