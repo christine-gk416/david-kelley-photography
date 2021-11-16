@@ -13,7 +13,7 @@ def about(request):
             email_subject = f'New contact from {form.cleaned_data["name"]} at {form.cleaned_data["email"]}: {form.cleaned_data["subject"]}'
             email_message = form.cleaned_data['message']
             recipient = form.cleaned_data['email']
-            send_mail(email_subject, email_message, recipient,['settings.ADMIN_EMAIL'])
+            send_mail(email_subject, email_message, recipient,[settings.ADMIN_EMAIL])
             form.save()
             messages.success(request, "Thanks for your message! We'll be in touch soon.")
             return redirect('about')
