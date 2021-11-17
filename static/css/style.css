@@ -1024,6 +1024,16 @@ select.input-blue {
     #brand {
         padding-left: 27%;
     }
+
+    .products-hero {
+        background: url('/media/david-kelley-background3.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .home-hero {
+        background: url('/media/david-kelley-background.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
 }
 
 @media only screen and (max-width:667px){
