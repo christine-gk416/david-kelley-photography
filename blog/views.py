@@ -49,10 +49,13 @@ def post_detail(request, slug):
                     context)
 
 
+@login_required
 def like_post(request, slug):
     post = get_object_or_404(Post, id=request.POST.get('like_id'))
+    
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
+        
     else:
          post.likes.add(request.user)
     

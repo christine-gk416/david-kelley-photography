@@ -1,41 +1,42 @@
 <div class="col-lg-4 mt-4 py-1 py-lg-0 desktop-nav">
     <ul class="float-left list-inline list-unstyled text-center my-0">
-    <li class="nav-item list-inline-item">
-        <a class="nav-link" href="{% url 'about' %}">About me</a>
-    </li>
-    <li class="nav-item list-inline-item">
-        <a class="nav-link" href="{% url 'blog'  %}">Blog</a>
-    </li>
-    <li class="nav-item dropdown list-inline-item">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Shop photography
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'products' %}">Shop All</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'products' %}?category=mountain_photography">Montain Photography</a>
-            <a class="dropdown-item" href="{% url 'products' %}?category=desert_photography">Desert Photography</a>
-            <a class="dropdown-item" href="{% url 'products' %}?category=beach_and_ocean_photography">Ocean & Beach Photography</a>
-            <a class="dropdown-item" href="{% url 'products' %}?category=animal_photography">Animal Photography</a>
-            <a class="dropdown-item" href="{% url 'products' %}?category=river_and_lake_photography">River & Lake Photography</a>
-        </div>
-    </li>
-</ul>
+        <li class="nav-item list-inline-item">
+            <a class="nav-link" href="{% url 'about' %}">About me</a>
+        </li>
+        <li class="nav-item list-inline-item">
+            <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+        </li>
+        <li class="nav-item dropdown list-inline-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Shop photography
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'products' %}">Shop All</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'products' %}?category=mountain_photography">Montain Photography</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=desert_photography">Desert Photography</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=beach_and_ocean_photography">Ocean & Beach Photography</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=animal_photography">Animal Photography</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=river_and_lake_photography">River & Lake Photography</a>
+            </div>
+        </li>
+    </ul>
 </div>
-  <div class="col-5 col-lg-4 mt-3 py-1 py-lg-0">
+
+<div class="col-5 col-lg-4 mt-3 pl-3 pl-lg-0">
     <a class="navbar-brand" href="/">
     <p id="brand">David Kelley Photography <i class="fab fa-pagelines"></i></p>
     </a>
-  </div>
+</div>
  
-  <div class="col-4 col-lg-4 my-auto py-1 py-lg-0">
+  <div class="col-5 col-lg-4 my-auto py-1 py-lg-0 right-mobile-nav">
       <ul class="list-inline list-unstyled text-center my-0">
-          <li class="list-inline-item dropdown">
-              <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li class="list-inline-item desktop-nav-account dropdown">
+              <a class="nav-link account-mobile-padding" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <div class="text-center">
-                      <div><i class="far fa-user-circle fa-lg"></i></div>
-                      <p class="my-0">My Account</p>
+                      <div><i class="far fa-user-circle  mobile-cart  fa-lg"></i></div>
+                      <p class="my-0 mobile-price">My Account</p>
                   </div>
               </a>
               <div class="dropdown-menu border-1" aria-labelledby="user-options">
@@ -56,10 +57,10 @@
               </div>
           </li>
           <li class="list-inline-item">
-              <a class="{% if grand_total %}in-cart font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'cart'  %}">
+              <a class="{% if grand_total %}in-cart font-weight-bold{% else %}text-black{% endif %} nav-link mobile-cart-padding" href="{% url 'cart'  %}">
                   <div class="text-center">
-                      <div><i class="fas fa-cart-plus fa-lg"></i></div>
-                      <p class="my-0">
+                      <div><i class="fas fa-cart-plus mobile-cart  fa-lg"></i></div>
+                      <p class="my-0 mobile-price">
                           {% if grand_total %}
                               ${{ grand_total|floatformat:2 }}
                           {% else %}
