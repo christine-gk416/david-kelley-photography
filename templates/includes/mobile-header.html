@@ -36,7 +36,7 @@
               </div>
           </li>
             <li><a href="{% url 'about' %}">About me</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
             <li class="dropdown list-inline-item">
               <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
@@ -44,9 +44,11 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=mountain_photography">Montain Photography</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=desert_photography">Desert Photography</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=beach_and_ocean_photography">Ocean & Beach Photography</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=animal_photography">Animal Photography</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=river_and_lake_photography">River & Lake Photography</a>
               </div>
           </li>
           </ul>

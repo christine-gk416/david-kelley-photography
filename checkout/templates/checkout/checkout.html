@@ -107,15 +107,17 @@
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
 
-                <div class="submit-button text-right mt-5 mb-2">                    
-                    <a href="{% url 'cart' %}" class="btn btn-outline-black rounded-0">
+                <div class="submit-button text-right mt-5 mb-2"> 
+                                   
+                    <a href="{% url 'cart' %}" class="back-shop-link mr-5">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
-                        <span class="font-weight-bold">Adjust Bag</span>
+                        <span>Adjust Bag</span>
                     </a>
-                    <button id="submit-button" class="btn btn-black rounded-0">
-                        <span class="font-weight-bold">Complete Order</span>
+                    
+                    <button id="submit-button" class="buy-btn product-btn-font">
+                        <span>Complete Order</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
                         </span>
