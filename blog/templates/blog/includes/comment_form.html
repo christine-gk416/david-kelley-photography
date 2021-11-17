@@ -1,38 +1,38 @@
-<div class="col-md-7 card mb-4 ml-5 mt-3 ">
+<div class="col-12 col-md-7 card mb-4 ml-m-5 mt-3 ">
     <div class="card-body">
-      <!-- comments -->
-      <h2>{{ comments.count }} Comments</h2>
+        <!-- comments -->
+        <h2>{{ comments.count }} Comments</h2>
 
-      {% for comment in comments %}
-      <div class="comments" style="padding: 10px;">
-        <p class="font-weight-bold">
-          {{ comment.name }}
-          <span class=" text-muted font-weight-normal">
-            {{ comment.created_on }}
-          </span>
-        </p>
-        {{ comment.body | linebreaks }}
+        {% for comment in comments %}
+        <div class="comments" style="padding: 10px;">
+          <p class="font-weight-bold">
+            {{ comment.name }}
+            <span class=" text-muted font-weight-normal">
+              {{ comment.created_on }}
+            </span>
+          </p>
+          {{ comment.body | linebreaks }}
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
+    </div>
+    <div class="col-md-7 card mb-4 ml-m-5 mt-3 ">
+      <div class="card-body">
+        {% if new_comment %}
+        <div class="alert alert-success" role="alert">
+          Your comment is awaiting moderation
+        </div>
+        {% else %}
+        <h3>Leave a comment</h3>
+        <form method="post" style="margin-top: 1.3em;">
+          {% csrf_token %}
+          {{ comment_form|crispy }}
+          
+          <button type="submit" class="btn blog-read-more  btn-md">Submit</button>
+        </form>
+        {% endif %}
+      </div>
     </div>
   </div>
-  <div class="col-md-7 card mb-4 ml-5 mt-3 ">
-    <div class="card-body">
-      {% if new_comment %}
-      <div class="alert alert-success" role="alert">
-        Your comment is awaiting moderation
-      </div>
-      {% else %}
-      <h3>Leave a comment</h3>
-      <form method="post" style="margin-top: 1.3em;">
-        {% csrf_token %}
-        {{ comment_form|crispy }}
-        
-        <button type="submit" class="btn blog-read-more  btn-md">Submit</button>
-      </form>
-      {% endif %}
-    </div>
-  </div>
-</div>
 </div>
 

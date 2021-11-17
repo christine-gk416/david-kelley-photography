@@ -29,11 +29,11 @@
     </div>
     <div class="row">
         <div class="product-container col-10 offset-1">
-            <div class="row mt-1 mb-2"></div>
+           
             <div class="row">
                 {% if wishlist %}
                 {% for product in wishlist  %}
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-4 py-4">
+                    <div class="col-sm-6 col-md-6 col-lg-5 col-xl-4 py-4">
                         <div class="card h-100 border-0">
                             {% if product.image %}
                             
@@ -54,10 +54,10 @@
                                     <div>
                                         <div class="float-right mb-3">
                                             
-                                            <a type="button" class="btn btn-light" href="{% url 'product_detail' product.id %}" role="button">Product details</a>
+                                            <a type="button" class="btn btn-light wishlist-button" href="{% url 'product_detail' product.id %}" role="button">Product details</a>
                                         </div>
                                         <div class="float-left mb-3">
-                                            <a type="button" class="btn btn-remove-wishlist" href="{% url 'user_wishlist' product.id %}">Remove from Wishlist</a>
+                                            <a type="button" class="btn btn-remove-wishlist wishlist-button" href="{% url 'user_wishlist' product.id %}">Remove product</a>
                                         </div> 
                                     </div>    
                                 </div>

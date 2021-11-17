@@ -1,27 +1,30 @@
-<div class="col-lg-12 col-md-6 mb-4 mb-md-0">
+<div class="row">
+    <div class="col-12 mb-4 mb-md-0 ">
 
-    <ul class="list-unstyled mb-0 pt-5 category-padding">
-        <li>
-            <a href="{% url 'products' %}" class="category-link ml-3">Shop all</a>
-        </li>
-        <li>
-            <a href="{% url 'products' %}?category=mountain_photography" class="category-link ml-3">Mountain</a>
-        </li>
-        <li>
-            <a href="{% url 'products' %}?category=desert_photography" class="category-link ml-3">Desert</a>
-        </li>
-        <li>
-            <a href="{% url 'products' %}?category=beach_and_ocean_photography" class="category-link ml-3">Ocean & beach</a>
-        </li>
-        <li>
-            <a href="{% url 'products' %}?category=animal_photography"  class="category-link ml-3">Animals</a>
-        </li>
-        <li>
-            <a href="{% url 'products' %}?category=river_and_lake_photography"  class="category-link ml-3">River & lake</a>
-        </li>
-    </ul>
+        <ul class="list-unstyled mb-0 pt-5 category-padding">
+            <li>
+                <a href="{% url 'products' %}" class="category-link ml-3">Shop all</a>
+            </li>
+            <li>
+                <a href="{% url 'products' %}?category=mountain_photography" class="category-link ml-3">Mountain</a>
+            </li>
+            <li>
+                <a href="{% url 'products' %}?category=desert_photography" class="category-link ml-3">Desert</a>
+            </li>
+            <li>
+                <a href="{% url 'products' %}?category=beach_and_ocean_photography" class="category-link ml-3">Ocean & beach</a>
+            </li>
+            <li>
+                <a href="{% url 'products' %}?category=animal_photography"  class="category-link ml-3">Animals</a>
+            </li>
+            <li>
+                <a href="{% url 'products' %}?category=river_and_lake_photography"  class="category-link ml-3">River & lake</a>
+            </li>
+        </ul>
+    </div>
+</div>
 
-    <div class="my-5 search-padding ">
+<div class="row justify-content-center search-padding my-5">
             
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
             <form method="GET" action="{% url 'products' %}">
@@ -39,4 +42,3 @@
         </div>
     
     </div>
-</div>
