@@ -877,6 +877,21 @@ select.input-blue {
     text-align: center;
 }
 
+@media only screen and (max-width:1080px){
+
+    .abstract-svg {
+        height: 59%;
+        width: auto;
+    }
+
+    .about-pic {
+
+        height: 65%;
+        width: auto;
+
+    }
+}
+
 
 @media only screen and (max-width:926px){
 
@@ -963,6 +978,25 @@ select.input-blue {
     
     .home-photo-mobile-caption {
         display: block;
+    }
+
+    /* About page */
+
+    .about-pic {
+        width: 46%;
+        height: auto;
+    }
+
+    .about-text {
+        right: 0%;
+    }
+
+    .form-padding {
+        padding: 5% 2%;
+    }
+
+    .mobile-contact-info {
+        font-size: 13px;
     }
 
 }
@@ -1059,6 +1093,18 @@ select.input-blue {
     .home-mobile-categories {
         padding-bottom: 12%;
     }
+
+    /* About page */
+
+    .abstract-svg {
+        height: 95%;
+        width: auto;
+    }
+
+    .about-pic {
+        width: 55%;
+    }
+       
 
     /* Blog pages */
 
