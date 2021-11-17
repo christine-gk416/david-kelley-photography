@@ -46,7 +46,7 @@
                     </div>
                     <div class="blog-info">
                         <h5><a href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a></h5>
-                        <p class="text-white">{{post.content|slice:":200" }}</p>
+                        <p class="text-white">{{post.content|truncatechars:180 }}</p>
                         <div class="btn-bar">
                              <a href="{% url 'post_detail' post.slug  %}" class="px-btn-arrow">
                                 <span>Read More</span>
