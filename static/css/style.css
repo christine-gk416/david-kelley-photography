@@ -270,6 +270,10 @@ hr {
     border: 1px dashed;
 }
 
+.home-photo-mobile-caption {
+    display: none;
+}
+
 .image-categories {
     height: auto;
     width: 100%;
@@ -957,6 +961,9 @@ select.input-blue {
         height: auto;
     }
     
+    .home-photo-mobile-caption {
+        display: block;
+    }
 
 }
 
@@ -1047,6 +1054,10 @@ select.input-blue {
     .home-blog2 {
         padding-left: 0%;
         padding-right: 0%;
+    }
+
+    .home-mobile-categories {
+        padding-bottom: 12%;
     }
 
     /* Blog pages */

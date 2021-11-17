@@ -25,9 +25,10 @@
 
     <div class="row mt-5">
         <div class="col-md-4">
-            <div class="overlay-hover" data-toggle="tooltip" data-placement="top" title="All photography">
+            <div class="overlay-hover home-mobile-categories" data-toggle="tooltip" data-placement="top" title="All photography">
                 <a href="{% url 'products' %}">
                     <img src="{% static 'media/susquehanna1.jpeg' %}" alt="Sunlight on Susquehanna River" class="image-categories shadow-lg">
+                    <h3 class="home-photo-mobile-caption">Shop all photos<h3>
                     <div class="overlay">
                         <div class="overlay-text"> <a class="overlay-link" href="{% url 'products' %}"  role="button">Shop all photos</a>
                         </div>
@@ -36,7 +37,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="overlay-hover" data-toggle="tooltip" data-placement="top" title="Mountain photography">
+            <div class="overlay-hover home-mobile-categories" data-toggle="tooltip" data-placement="top" title="Mountain photography">
                 <a href="{% url 'products' %}?category=mountain_photography">
                     <img src="{% static 'media/glacier-yosemite-1.jpeg' %}" alt="Glacier at Yosemite National Park" 
                         class="image-categories shadow-lg">
@@ -49,7 +50,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="overlay-hover data-toggle="tooltip" data-placement="top" title="Desert photography">
+            <div class="overlay-hover" data-toggle="tooltip" data-placement="top" title="Desert photography">
                 <a href="{% url 'products' %}?category=desert_photography">
                     <img src="{% static 'media/red-rocks1.jpg' %}" alt="Red rock cliffs in Sedona, Arizona" class="image-categories shadow-lg">
                     <div class="overlay">
@@ -64,7 +65,8 @@
 
     <div class="row my-5">
         <div class="col-md-4">
-            <div class="overlay-hover data-toggle="tooltip" data-placement="top" title="Beach & Ocean photography">
+            <div class="overlay-hover home-mobile-categories"
+             data-toggle="tooltip" data-placement="top" title="Beach & Ocean photography">
                 <a href="{% url 'products' %}?category=beach_and_ocean_photography">
                     <img src="{% static 'media/cape-mears1.jpg' %}" alt="View over cliffs in Cape Mears, Oregan" 
                         class="image-categories shadow-lg">
@@ -77,8 +79,8 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="overlay-hover">
-                <a href="{% url 'products' %}?category=animal_photography" data-toggle="tooltip" data-placement="top" title="Animal photography">
+            <div class="overlay-hover home-mobile-categories" data-toggle="tooltip" data-placement="top" title="Animal photography">
+                <a href="{% url 'products' %}?category=animal_photography">
                     <img src="{% static 'media/buffalos.jpg' %}" alt="Buffalo at Yellowstone National Park" class="image-categories shadow-lg">
                     <div class="overlay"> 
                         <div class="overlay-text">
@@ -89,7 +91,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="overlay-hover" data-toggle="tooltip" data-placement="top" title="River & lake photography">
+            <div class="overlay-hover home-mobile-categories" data-toggle="tooltip" data-placement="top" title="River & lake photography">
                 <a href="{% url 'products' %}?category=river_and_lake_photography">
                     <img src="{% static 'media/susquehanna2.jpg' %}" alt="Mist over the Suesquehanna River in Pennsylvania"
                         class="image-categories shadow-lg">
