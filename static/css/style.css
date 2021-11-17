@@ -980,6 +980,11 @@ select.input-blue {
         display: block;
     }
 
+    .caption-background {
+        background: #DDA15E;
+        border: 1px solid black;
+    }
+
     /* About page */
 
     .about-pic {
