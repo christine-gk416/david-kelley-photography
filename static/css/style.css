@@ -1027,7 +1027,7 @@ select.input-blue {
 
     .products-hero {
         background: url('/media/david-kelley-background3.jpg') no-repeat center center fixed;
-        background-size: contain;
+        background-size: auto;
     }
 
     .home-hero {
