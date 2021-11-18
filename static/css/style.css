@@ -1026,12 +1026,12 @@ select.input-blue {
     }
 
     .products-hero {
-        background: url('/media/david-kelley-background3.jpg') no-repeat center center fixed;
-        background-size: auto;
+        background: url('/media/david-kelley-background3.jpg') no-repeat center center;
+        background-size: cover;
     }
 
     .home-hero {
-        background: url('/media/david-kelley-background.jpg') no-repeat center center fixed;
+        background: url('/media/david-kelley-background.jpg') no-repeat center center;
         background-size: cover;
     }
 }
