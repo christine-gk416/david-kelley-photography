@@ -44,8 +44,8 @@ def product_detail(request, product_id):
 
     related_products = list(product.category.products.exclude(id=product.id))
     
-    if len(related_products) >= 1:
-        related_products = random.sample(related_products, 1)
+    if len(related_products) >= 3:
+        related_products = random.sample(related_products, 3)
 
     context = {
         'product': product,
