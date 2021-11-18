@@ -1034,6 +1034,11 @@ select.input-blue {
         background: url('/media/david-kelley-background.jpg') no-repeat center center;
         background-size: cover;
     }
+
+    .home-hero2 {
+        background: url('/media/david-kelley-background2.jpg') no-repeat center center;
+        background-size: cover;
+    }
 }
 
 @media only screen and (max-width:667px){
