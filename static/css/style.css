@@ -216,6 +216,10 @@ p {
     font-size: 18px;
 }
 
+.shipping-font {
+    font-size: 24px;
+}
+
 .primary-text {
     color: #0a0e06;
 }
@@ -949,6 +953,10 @@ select.input-blue {
     /* Home page */
 
    h4 {
+        font-size: 20px;
+    }
+
+    .shipping-font {
         font-size: 20px;
     }
 
