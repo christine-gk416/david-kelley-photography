@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block page_header %}
+<!-- All blog posts hero -->
 <div class="h-100 home-hero2">
     <div class="row">
         <div class="col-12 mb-5 home-hero-padding">
@@ -20,22 +21,26 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-7 text-center">
-                <div class="section-title">
+                <div>
                     <h2>Latest News</h2>
                     <p>Stay up to date with my travels, learn about the places influece my photography, and read my musings on how landscapes shape life.</p>
                 </div>
             </div>
         </div>
+
         <div class="row">
-            {% for post in posts %}
+        <!-- Iterate through content on the blog details page  -->
+        {% for post in posts %}
+        <!-- Filter posts to only show published posts -->
             {% if post.status == 1 %}
             <div class="col-lg-4">
-                
                 <div class="blog-grid">
                     <div class="blog-img">
+                    <!-- Sort post by date it was updated -->
                         <div class="date">{{ post.updated_on }}</div>
                         {% if post.image_url %}
-                            <img src="{{ post.image_url}}" class="blog-page-image" title="" alt="{{post.title}}">
+                            <img src="{{ post.image_url}}" class="blog-page-image" title="" alt=
+                            "{{post.title}}">
 
                             {% else %}
                                 
@@ -45,39 +50,41 @@
                        
                     </div>
                     <div class="blog-info">
-                        <h5><a href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a></h5>
+                        <h5>
+                            <a href="{% url 'post_detail' post.slug  %}">{{ post.title }}
+                            </a>
+                        </h5>
                         <p class="text-white">{{post.content|truncatechars:180 }}</p>
                         <div class="btn-bar">
-                             <a href="{% url 'post_detail' post.slug  %}" class="px-btn-arrow">
+                            <a href=
+                            "{% url 'post_detail' post.slug  %}" class="px-btn-arrow">
                                 <span>Read More</span>
                                 <i class="arrow"></i>
-                            </a> 
+                            </a>  
                             
                             <div class="float-right">
-                            
-                            <p class="text-white">{{ post.comments.count }} <i class="far fa-comments text-white"></i>
-                            </p>
-
+                                <p class="text-white">{{ post.comments.count }} <i class="far fa-comments text-white"></i>
+                                </p>
                             </div>
                             
-                            
                         </div>
-
+                        <!-- Display option to edit/delete post if user is a superuser -->
                         {% if request.user.is_superuser %}
                             <div class="mt-3">
-                                <a class="btn btn-sm btn-primary" role="button" href="{% url 'edit_post' post.slug %}">Edit</a> | 
+                                <a class="btn btn-sm btn-primary" role="button" href="{% url 'edit_post' post.slug %}">
+                                Edit
+                                </a> | 
                                 
-                                <a class="btn btn-sm btn-danger" role="button" href="{% url 'delete_post' post.slug %}">Delete
+                                <a class="btn btn-sm btn-danger" role="button" href="{% url 'delete_post' post.slug %}">
+                                Delete
                                 </a>
                             </div>
                         {% endif %}
                     </div>
-                    
                 </div>
             </div>
             {% endif %}
             {% endfor %}
-            
         </div>
     </div>
 </section>

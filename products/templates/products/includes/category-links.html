@@ -1,3 +1,4 @@
+<!-- Product category links -->
 <div class="row">
     <div class="col-12 mb-4 mb-md-0 ">
 
@@ -24,21 +25,20 @@
     </div>
 </div>
 
+<!-- Product searchbar -->
 <div class="row justify-content-center search-padding my-5">
-            
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
-            <form method="GET" action="{% url 'products' %}">
-                <div class="input-group w-100">
-                    <input class="contact-border form-control rounded-0" type="text" name="q" placeholder="Search products">
-                    <div class="input-group-append bg-green contact-border">
-                        <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                            <span class="icon">
-                                <i class="fas fa-search text-white"></i>
-                            </span>
-                        </button>
-                    </div>
+    <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
+        <form method="GET" action="{% url 'products' %}">
+            <div class="input-group w-100">
+                <input class="contact-border form-control rounded-0" type="text" name="q" placeholder="Search products">
+                <div class="input-group-append bg-green contact-border">
+                    <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                        <span class="icon">
+                            <i class="fas fa-search text-white"></i>
+                        </span>
+                    </button>
                 </div>
-            </form>
-        </div>
-    
+            </div>
+        </form>
     </div>
+</div>

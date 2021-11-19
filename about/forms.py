@@ -4,11 +4,12 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Row, Column, Submit
 class ContactForm(forms.ModelForm):
 
+# Select specific form fields from the model#
     class Meta:
         model = Contact
         fields = ('name', 'email', 'subject', 'message')
 
-
+# Style the crispy form with layout and custom css #
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()

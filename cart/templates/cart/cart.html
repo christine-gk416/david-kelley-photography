@@ -3,12 +3,12 @@
 {% load cart_tools %}
 
 {% block page_header %}
+<!-- Product details hero image -->
 {% include 'products/includes/details-banner.html' %}
 {% endblock %}
 
 {% block content %}
 
-<div class="overlay"></div>
 <div class="container mb-2">
     <div class="row">
         <div class="col">
@@ -20,6 +20,7 @@
 
     <div class="row">
         <div class="col">
+        <!-- If item is in the cart -->
             {% if cart_items %}
                 <div class="table-responsive rounded">
                     <table class="table table-sm table-borderless">
@@ -32,7 +33,7 @@
                                 <th scope="col">Subtotal</th>
                             </tr>
                         </thead>
-
+                        <!-- Iterate through items in the cart -->
                         {% for item in cart_items %}
                             <tr>
                                 <td class="p-3 w-25">
@@ -63,6 +64,7 @@
                                                         </span>
                                                     </button>
                                                 </div>
+                                                <!-- Form to add or remove products -->
                                                 <input class="form-control form-control-sm qty_input" type="number"
                                                     name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                                     data-item_id="{{ item.item_id }}"

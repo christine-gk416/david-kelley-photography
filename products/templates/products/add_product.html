@@ -2,43 +2,50 @@
 {% load static %}
 
 {% block page_header %}
+<!-- Products hero image -->
 {% include 'products/includes/product-manage-banner.html' %}
 {% endblock %}
 
 {% block content %}
     
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
-                <hr>
-                {% comment %} <h2 class="logo-font mb-4">Product Management</h2> {% endcomment %}
-                <h2 class="text-center">Add a Product</h2>
-                <hr>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %}
-                    <div class="text-left">
-                        <a class="btn btn-secondary" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-success" type="submit">Add Product</button>
-                    </div>
-                </form>
-            </div>            
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <hr>
+            <h2 class="text-center">Add a Product</h2>
+            <hr>
         </div>
     </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <!-- Add product form -->
+            <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+                <div class="text-left">
+                    <a class="btn btn-secondary" href="{% url 'products' %}">
+                        Cancel
+                    </a>
+                    <button class="btn btn-success" type="submit">
+                        Add Product
+                    </button>
+                </div>
+            </form>
+        </div>            
+    </div>
+</div>
+
 {% endblock %}
 
 {% block postloadjs %}
+    <!-- Query to use custom image input widget -->
     {{ block.super }}
     <script type="text/javascript">
         $('#new-image').change(function() {

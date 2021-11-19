@@ -1,3 +1,4 @@
+<!-- Desktop header navlinks -->
 <div class="col-lg-4 mt-4 py-1 py-lg-0 desktop-nav">
     <ul class="float-left list-inline list-unstyled text-center my-0">
         <li class="nav-item list-inline-item">
@@ -24,51 +25,59 @@
     </ul>
 </div>
 
+<!-- Main site branding -->
 <div class="col-5 col-lg-4 mt-3 pl-3 pl-lg-0">
     <a class="navbar-brand" href="/">
-    <p id="brand">David Kelley Photography <i class="fab fa-pagelines"></i></p>
+        <p id="brand">
+            David Kelley Photography 
+            <i class="fab fa-pagelines"></i>
+        </p>
     </a>
 </div>
  
-  <div class="col-5 col-lg-4 my-auto py-1 py-lg-0 right-mobile-nav">
-      <ul class="list-inline list-unstyled text-center my-0">
-          <li class="list-inline-item desktop-nav-account dropdown">
-              <a class="nav-link account-mobile-padding" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <div class="text-center">
-                      <div><i class="far fa-user-circle  mobile-cart  fa-lg"></i></div>
-                      <p class="my-0 mobile-price">My Account</p>
-                  </div>
-              </a>
-              <div class="dropdown-menu border-1" aria-labelledby="user-options">
-                  {% if request.user.is_authenticated %}
-                      {% if request.user.is_superuser %}
-                          <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                      {% endif %}
-                      {% if request.user.is_superuser %}
-                          <a href="{% url 'add_post' %}" class="dropdown-item">Manage Blog Posts</a>
-                      {% endif %}
-                      <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                      <a href="{% url 'wishlist' %}" class="dropdown-item">Wishlist</a>
-                      <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                  {% else %}
-                      <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                      <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                  {% endif %}
-              </div>
-          </li>
-          <li class="list-inline-item">
-              <a class="{% if grand_total %}in-cart font-weight-bold{% else %}text-black{% endif %} nav-link mobile-cart-padding" href="{% url 'cart'  %}">
-                  <div class="text-center">
-                      <div><i class="fas fa-cart-plus mobile-cart  fa-lg"></i></div>
-                      <p class="my-0 mobile-price">
-                          {% if grand_total %}
-                              ${{ grand_total|floatformat:2 }}
-                          {% else %}
-                              $0.00
-                          {% endif %}
-                      </p>
-                  </div>
-              </a>
-          </li>
-      </ul>
-  </div>
+<!-- Desktop cart and account links -->
+<div class="col-5 col-lg-4 my-auto py-1 py-lg-0 right-mobile-nav">
+    <ul class="list-inline list-unstyled text-center my-0">
+        <li class="list-inline-item desktop-nav-account dropdown">
+            <a class="nav-link account-mobile-padding" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="text-center">
+                    <div><i class="far fa-user-circle  mobile-cart  fa-lg"></i></div>
+                    <p class="my-0 mobile-price">My Account</p>
+                </div>
+            </a>
+            <div class="dropdown-menu border-1" aria-labelledby="user-options">
+                <!-- Check if user is logged in -->
+                {% if request.user.is_authenticated %}
+                    <!-- Check if user is superuser -->
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                    {% endif %}
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'add_post' %}" class="dropdown-item">Manage Blog Posts</a>
+                    {% endif %}
+                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                    <a href="{% url 'wishlist' %}" class="dropdown-item">Wishlist</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                <!-- Otherwise display register/login links -->
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+            </div>
+        </li>
+        <li class="list-inline-item">
+            <a class="{% if grand_total %}in-cart font-weight-bold{% else %}text-black{% endif %} nav-link mobile-cart-padding" href="{% url 'cart'  %}">
+                <div class="text-center">
+                    <div><i class="fas fa-cart-plus mobile-cart  fa-lg"></i></div>
+                    <p class="my-0 mobile-price">
+                        {% if grand_total %}
+                            ${{ grand_total|floatformat:2 }}
+                        {% else %}
+                            $0.00
+                        {% endif %}
+                    </p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

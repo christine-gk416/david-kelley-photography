@@ -1,68 +1,74 @@
+<!-- Mobile button and modal -->
 <div class="col-2 mobile-navigation">
-    <button id="sized" type="button" class="menu">
-      <span></span>
-    </button>
+  <!-- Menu modal button -->
+  <button id="sized" type="button" class="menu" aria-label="Mobile nav button" role="none">
+    <span></span>
+  </button>
 
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content animated zoomIn">
-        <div class="modal-header"> 
-          <span class="close">×</span>
-        </div>
-
-        <div class="modal-body nav">
-    
-          <ul>
-            <li class="dropdown list-inline-item desktop-nav-account2">
-              <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  My Account 
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {% if request.user.is_authenticated %}
-                      {% if request.user.is_superuser %}
-                          <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                      {% endif %}
-                      {% if request.user.is_superuser %}
-                          <a href="{% url 'add_post' %}" class="dropdown-item">Manage Blog Posts</a>
-                      {% endif %}
-                      <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                      <a href="{% url 'wishlist' %}" class="dropdown-item">Wishlist</a>
-                      <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                  {% else %}
-                      <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                      <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                  {% endif %}
-              </div>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content animated zoomIn">
+      <div class="modal-header"> 
+        <span class="close">×</span>
+      </div>
+      <div class="modal-body nav">
+        <ul>
+        <!-- Account dropdown to display on smaller mobile screens -->
+          <li class="dropdown list-inline-item desktop-nav-account2">
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                My Account 
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <!-- Check if user is logged in -->
+              {% if request.user.is_authenticated %}
+                  <!-- Check if user is superuser -->
+                {% if request.user.is_superuser %}
+                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                {% endif %}
+                {% if request.user.is_superuser %}
+                <a href="{% url 'add_post' %}" class="dropdown-item">Manage Blog Posts</a>
+                {% endif %}
+                  <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                  <a href="{% url 'wishlist' %}" class="dropdown-item">Wishlist</a>
+                  <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+              {% else %}
+              <!-- Otherwise display register/login links -->
+                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+              {% endif %}
+            </div>
           </li>
-            <li><a href="{% url 'about' %}">About me</a></li>
-            <li><a href="{% url 'blog' %}">Blog</a></li>
-            <li class="dropdown list-inline-item">
-              <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Shop photography
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=mountain_photography">Montain Photography</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=desert_photography">Desert Photography</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=beach_and_ocean_photography">Ocean & Beach Photography</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=animal_photography">Animal Photography</a>
-                  <a class="dropdown-item" href="{% url 'products' %}?category=river_and_lake_photography">River & Lake Photography</a>
-              </div>
+          <li><a href="{% url 'about' %}">About me</a></li>
+          <li><a href="{% url 'blog' %}">Blog</a></li>
+          <li class="dropdown list-inline-item">
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Shop photography
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=mountain_photography">Montain Photography</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=desert_photography">Desert Photography</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=beach_and_ocean_photography">Ocean & Beach Photography</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=animal_photography">Animal Photography</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=river_and_lake_photography">River & Lake Photography</a>
+            </div>
           </li>
-          </ul>
-        </div>
-
-        <div class="modal-footer justify-content-center">
-          <p>
-            <strong>Contact</strong>
-            <br>David Kelley | +1 717-439-0001 |
-          
-            <a href="mailto: david.kelley.photos@gmail.com" target="_blank" rel="noopener">david.kelley.photos@gmail.com</a>
-          </p>
-        </div>
+        </ul>
       </div>
 
+      <!-- Modal footer -->
+      <div class="modal-footer justify-content-center">
+        <p>
+          <strong>Contact</strong>
+          <br>David Kelley | +1 717-439-0001 |
+        
+          <a href="mailto: david.kelley.photos@gmail.com" target="_blank" rel="noopener">
+            david.kelley.photos@gmail.com
+          </a>
+        </p>
+      </div>
     </div>
   </div>
+</div>

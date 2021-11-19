@@ -3,40 +3,46 @@
 {% load crispy_forms_tags %}
 {% crispy form %}
 
- {% block extra_js %}
- {{ block.super }}
- {{ form.media }}
+{% block extra_js %}
+{{ block.super }}
+{{ form.media }}
 {% endblock %}
 
 {% block page_header %}
-    {% include 'blog/includes/blog-hero.html' %}
+<!-- Include blog management hero image -->
+{% include 'blog/includes/blog-hero.html' %}
 {% endblock %}
 
 {% block content %}
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="text-center">Add a Post</h2>
-                <hr>
-            </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <hr>
+            <h2 class="text-center">Add a Post</h2>
+            <hr>
         </div>
+    </div>
 
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'add_post' %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form | crispy }}
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+        <!-- Form to add new blog post -->
+            <form method="POST" action="{% url 'add_post' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
 
-                    <div class="text-left">
-                        <a class="btn btn-secondary" href="{% url 'blog' %}">Cancel</a>
-                        <button class="btn btn-success" type="submit">Add Post</button>
-                    </div>
-                </form>
-            </div>            
-        </div>
-    </div>   
-
-    {% include 'blog/includes/blog-drafts.html' %}
+                <div class="text-left">
+                    <a class="btn btn-secondary" href="{% url 'blog' %}">
+                        Cancel
+                    </a>
+                    <button class="btn btn-success" type="submit">
+                        Add Post
+                    </button>
+                </div>
+            </form>
+        </div>            
+    </div>
+</div>   
+<!-- Include blog drafts -->
+{% include 'blog/includes/blog-drafts.html' %}
 {% endblock %}

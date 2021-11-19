@@ -2,27 +2,26 @@
 {% load static %}
 
 {% block page_header %}
+<!-- Home hero image -->
 {% include 'home/includes/home-banner.html'%}
 {% endblock %}
 
 {% block content %}
-
+<!-- Delivery banner -->
 <div id="delivery-banner" class="row text-center mb-5">
     <div class="col shipping-banner text-black">
         <h4 class="my-1"><strong>Free delivery on orders over ${{ free_delivery_threshold }}!</strong></h4>                
     </div>            
 </div>
   
-
 <div class="container">
-    
     <div class="row">
         <div class="col-12 mt-3 text-center">
             <h2>Browse David's photography by category</h2>
             <p class="primary-text">(Hover over each image to sort product images)</p>
         </div>
     </div>
-
+    <!-- Gallery to sort products by category -->
     <div class="row mt-5">
         <div class="col-md-4">
             <div class="overlay-hover home-mobile-categories" data-toggle="tooltip" data-placement="top" title="All photography">
@@ -42,7 +41,6 @@
                     <img src="{% static 'media/glacier-yosemite-1.jpeg' %}" alt="Glacier at Yosemite National Park" 
                         class="image-categories shadow-lg">
                     <h3 class="home-photo-mobile-caption caption-background text-center">Mountain photography<h3>
-                    
                     <div class="overlay">
                         <div class="overlay-text">
                             <a href="{% url 'products' %}?category=mountain_photography" class="overlay-link" role="button">Mountain photography</a>
@@ -56,7 +54,6 @@
                 <a href="{% url 'products' %}?category=desert_photography">
                     <img src="{% static 'media/red-rocks1.jpg' %}" alt="Red rock cliffs in Sedona, Arizona" class="image-categories shadow-lg">
                     <h3 class="home-photo-mobile-caption caption-background text-center">Desert photography<h3>
-
                     <div class="overlay">
                         <div class="overlay-text">
                             <a href="{% url 'products' %}?category=desert_photography" class="overlay-link"  role="button">Desert photography</a>
@@ -75,7 +72,6 @@
                     <img src="{% static 'media/cape-mears1.jpg' %}" alt="View over cliffs in Cape Mears, Oregan" 
                         class="image-categories shadow-lg">
                     <h3 class="home-photo-mobile-caption caption-background text-center">Ocean & beach photography<h3>
-                    
                     <div class="overlay">
                         <div class="overlay-text">
                             <a href="{% url 'products' %}?category=beach_and_ocean_photography"  class="overlay-link"  role="button">Ocean & beach photography</a>
@@ -89,7 +85,6 @@
                 <a href="{% url 'products' %}?category=animal_photography">
                     <img src="{% static 'media/buffalos.jpg' %}" alt="Buffalo at Yellowstone National Park" class="image-categories shadow-lg">
                     <h3 class="home-photo-mobile-caption caption-background text-center">Animal photography<h3>
-
                     <div class="overlay"> 
                         <div class="overlay-text">
                             <a href="{% url 'products' %}?category=animal_photography" class="overlay-link"  role="button">Animal photography</a>
@@ -104,7 +99,6 @@
                     <img src="{% static 'media/susquehanna2.jpg' %}" alt="Mist over the Suesquehanna River in Pennsylvania"
                         class="image-categories shadow-lg">
                     <h3 class="home-photo-mobile-caption caption-background text-center">River & lake photography<h3>
-                    
                     <div class="overlay">
                         <div class="overlay-text">
                             <a href="{% url 'products' %}?category=river_and_lake_photography" class="overlay-link"  role="button">River & lake photography</a>
@@ -115,7 +109,7 @@
         </div>
     </div>
 </div>
-
+<!-- Include blog posts on home page -->
 {% include 'home/includes/home-blog.html'%}
 
 {% endblock %}

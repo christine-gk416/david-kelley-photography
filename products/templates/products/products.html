@@ -2,17 +2,18 @@
 {% load static %}
 
 {% block page_header %}
+<!-- Products hero image -->
 {% include 'products/includes/product-banner.html' %}
 {% endblock %}
 
 {% block content %}
-
+<!-- Delivery banner -->
 <div id="delivery-banner" class="row text-center mb-2">
     <div class="col shipping-banner text-black">
         <h4 class="my-1"><strong>Free delivery on orders over ${{ free_delivery_threshold }}!</strong></h4>                
     </div>            
 </div>
-
+<!-- Include product category links and searchbar -->
 {% include 'products/includes/category-links.html' %}
     <div class="container-fluid">
         <div class="row">
@@ -23,63 +24,56 @@
         </div>
         <div class="row">
             <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
                 <div class="row">
+                    <!-- Iterate through products -->
                     {% for product in products %}
                         <div class="col-sm-6  col-xl-4 py-4">
                             <div class="card h-100 border-0">
                                 {% if product.image %}
-                                
                                     <img class="card-img-top2 product-card-shadow img-fluid product-img-dimensions" src="{{ product.image.url }}" alt="{{ product.name }}">
-                               
                                 {% else %}
-                                
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                
                                 {% endif %}
-                                <div class="card-footer2 product-card-shadow ">
+                                <div class="card-footer2 product-card-shadow">
                                     <div class="px-3 py-2">
                                         <div>
-                                        <p class="mb-2 text-white text-center">{{ product.name }} 
-                                            {% if user.id in liked_products %}
-                                            <a href="{% url "user_wishlist" product.id %}" class="select-heart pl-2" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
-                                                <i class="fas fa-heart fa-lg">
-                                                </i>
-                                            </a>
-                                            
-                                        {% else %}
-                                            <a href="{% url "user_wishlist" product.id %}" class="wishlist-heart pl-2" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
-                                                <i class="fas fa-heart fa-lg">
-                                                </i>
-                                            </a>
-
-                                           {% endif %} 
-                                            
-                                            
-                                        </p>
-                                        <p class="lead mb-2 text-left font-weight-bold text-center text-white">${{ product.price }}</p>
-                                    </div>
+                                            <p class="mb-2 text-white text-center">
+                                                {{ product.name }} 
+                                                {% if user.id in liked_products %}
+                                                <!-- Product wishlist button -->
+                                                <a href="{% url "user_wishlist" product.id %}" class="select-heart pl-2" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
+                                                    <i class="fas fa-heart fa-lg">
+                                                    </i>
+                                                </a>
+                                                {% else %}
+                                                <a href="{% url "user_wishlist" product.id %}" class="wishlist-heart pl-2" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
+                                                    <i class="fas fa-heart fa-lg">
+                                                    </i>
+                                                </a>
+                                            {% endif %} 
+                                            </p>
+                                            <p class="lead mb-2 text-left font-weight-bold text-center text-white">
+                                            ${{ product.price }}
+                                            </p>
+                                        </div>
                                         <div class="text-center">
-                                            
-                                            <a class="btn btn-light" href="{% url 'product_detail' product.id %}" role="button">Product details</a>
-                                        </div>
-                                    </div>
-
-                                    {% if request.user.is_superuser %}
-                                
-
-                                        <div class="my-3 text-center">
-                                            <a class="btn btn-sm btn-primary" role="button" href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                            
-                                            <a class="btn btn-sm btn-danger" role="button" href="{% url 'delete_product' product.id %}">Delete
+                                            <a class="btn btn-light" href="{% url 'product_detail' product.id %}" role="button">
+                                                Product details
                                             </a>
                                         </div>
-                                    {% endif %}
+                                    </div>
+                                    <!-- Display option to edit/delete post if user is a superuser -->
+                                {% if request.user.is_superuser %}
+                                    <div class="my-3 text-center">
+                                        <a class="btn btn-sm btn-primary" role="button" href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                        
+                                        <a class="btn btn-sm btn-danger" role="button" href="{% url 'delete_product' product.id %}">Delete
+                                        </a>
+                                    </div>
+                                {% endif %}
                                 </div>
-                                
                             </div>
                         </div>
-                       
                     {% endfor %}
                 </div>
             </div>

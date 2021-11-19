@@ -3,12 +3,14 @@
 {% load crispy_forms_tags %}
 {% crispy form %} 
 
-
+<!-- About header -->
 {% block page_header %}
 {% include 'about/includes/about-banner.html'%}
 {% endblock %}
 
 {% block content %}
+
+<!-- Main about page content -->
 <div class="container">
     <div class="row h-100">
         <div class="col-12 col-lg-6">
@@ -37,5 +39,6 @@
     </div>
 </div>
 
+<!-- Contact form -->
 {% include 'about/includes/contact-form.html'%}
 {% endblock %}

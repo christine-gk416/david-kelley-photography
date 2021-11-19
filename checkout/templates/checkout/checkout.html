@@ -3,10 +3,12 @@
 {% load cart_tools %}
 
 {% block extra_css %}
+<!-- Custom checkout page CSS-->
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
+<!-- Products hero image -->
 {% include 'products/includes/details-banner.html' %}
 {% endblock %}
 
@@ -16,12 +18,13 @@
 <div class="container">
     <div class="row">
         <hr>
-            <h2 class="logo-font mb-4">Checkout</h2>
+        <h2 class="logo-font mb-4">Checkout</h2>
         <hr>
     </div>
 
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
+            <!-- Count number of items incart -->
             <p class="text-muted">Order Summary ({{ product_count }})</p>
             <div class="row">
                 <div class="col-7 offset-2">
@@ -31,6 +34,7 @@
                     <p class="mb-1 mt-0 small text-muted">Subtotal</p>
                 </div>
             </div>
+            <!-- Iterate through items in the cart -->
             {% for item in cart_items %}
                 <div class="row">
                     <div class="col-2 mb-1">
@@ -60,13 +64,17 @@
                     <p class="my-0">Grand Total:</p>
                 </div>
                 <div class="col-3">
+                    <!-- Calculate total  -->
                     <p class="my-0">${{ total | floatformat:2 }}</p>
+                    <!-- Calculate delivery  -->
                     <p class="my-0">${{ delivery | floatformat:2 }}</p>
+                    <!-- Calculate grand total  -->
                     <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
                 </div>
             </div>
         </div>
         <div class="col-12 col-lg-6">
+            <!-- Checkout payment form  -->
             <p class="text-muted">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
@@ -85,9 +93,11 @@
                     {{ order_form.state | as_crispy_field }}
                     {{ order_form.postcode | as_crispy_field }}
                     <div class="form-check form-check-inline float-right mr-0">
+                    <!-- Allow the user to save delivery info if logged in -->
                         {% if user.is_authenticated %}
                             <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
                             <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                    <!-- Prompt the user to login or create an account, if not logged in -->    
                         {% else %}
                             <label class="form-check-label" for="id-save-info">
                                 <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
@@ -132,15 +142,14 @@
             </form>
         </div>
     </div>
-
-   
 </div>
 
+<!-- Loading overlay -->
 <div id="loading-overlay">
-    <h1 class="text-light logo-font loading-spinner">
-        <span class="icon">
-            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
-        </span>
+    <h1 class="text-light loading-spinner">
+        <div class="fa-3x">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
     </h1>
 </div>
 
@@ -148,7 +157,9 @@
 
 {% block postloadjs %}
     {{ block.super }}
+    <!-- Retrieve Stripe Public Key and client ID -->
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
+    <!-- Checkout JavaScript -->
     <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
