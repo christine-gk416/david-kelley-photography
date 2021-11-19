@@ -47,7 +47,7 @@
                 <!-- Display option to edit/delete post if user is a superuser -->
             {% if request.user.is_superuser %}
                 <div class="mt-3">
-                    <a class="btn btn-sm btn-outline-primary" role="button" href="{% url 'edit_post' post.slug %}">Edit
+                    <a class="btn btn-sm btn-outline-dark" role="button" href="{% url 'edit_post' post.slug %}">Edit
                     </a> | 
                     
                     <a class="btn btn-sm btn-outline-danger" role="button" href="{% url 'delete_post' post.slug %}">Delete
@@ -66,12 +66,13 @@
             <div class="col-md-12">
                 <p>{{ post.content|linebreaksbr }}</p> 
             </div>
+       
+        </div>
         <!-- Include blog sidebar -->
         {% include 'blog/includes/blog_sidebar.html' %}
         <!-- Include blog comments -->
         {% include 'blog/includes/comment_form.html' %} 
-        </div>
     </div>
 </article>
-
+ 
 {% endblock %}
