@@ -10,7 +10,7 @@
 <!-- Delivery banner -->
 <div id="delivery-banner" class="row text-center mb-2">
     <div class="col shipping-banner text-black">
-        <h4 class="my-1"><strong>Free delivery on orders over ${{ free_delivery_threshold }}!</strong></h4>                
+        <p class="my-1 shipping-font"><strong>Free delivery on orders over ${{ free_delivery_threshold }}!</strong></p>                
     </div>            
 </div>
 <!-- Include product category links and searchbar -->
@@ -41,12 +41,13 @@
                                                 {{ product.name }} 
                                                 {% if user.id in liked_products %}
                                                 <!-- Product wishlist button -->
-                                                <a href="{% url "user_wishlist" product.id %}" class="select-heart pl-2" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
+                                                <a href="{% url "user_wishlist" product.id %}" class="select-heart pl-2" aria-label="Product wishlist button" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
                                                     <i class="fas fa-heart fa-lg">
                                                     </i>
                                                 </a>
                                                 {% else %}
-                                                <a href="{% url "user_wishlist" product.id %}" class="wishlist-heart pl-2" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
+                                                <a href="{% url "user_wishlist" product.id %}" class="wishlist-heart pl-2" 
+                                                aria-label="Product wishlist button" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
                                                     <i class="fas fa-heart fa-lg">
                                                     </i>
                                                 </a>
@@ -65,7 +66,7 @@
                                     <!-- Display option to edit/delete post if user is a superuser -->
                                 {% if request.user.is_superuser %}
                                     <div class="my-3 text-center">
-                                        <a class="btn btn-sm btn-primary" role="button" href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                        <a class="btn btn-sm btn-dark" role="button" href="{% url 'edit_product' product.id %}">Edit</a> | 
                                         
                                         <a class="btn btn-sm btn-danger" role="button" href="{% url 'delete_product' product.id %}">Delete
                                         </a>
