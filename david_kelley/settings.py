@@ -18,7 +18,6 @@ if os.path.exists("env.py"):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -27,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = True 
+DEBUG = True
 
 ALLOWED_HOSTS = ['david-kelley-photography.herokuapp.com', 'localhost']
 
@@ -103,7 +102,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -228,14 +226,3 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
     ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL')
-
-# Twilio SendGrid
-
-# CONTACT_EMAIL = 'cgk416@gmail.com'
-# ADMIN_EMAIL = ['cgk416@gmail.com', ]
-
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'apikey'
-# EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')

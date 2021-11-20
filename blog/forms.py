@@ -1,11 +1,16 @@
+from tempus_dominus.widgets import DatePicker
+
 from .models import Comment, Post
 from django import forms
-from tempus_dominus.widgets import DatePicker
+
+
+# Add/edit blog post form #
 class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'author_name', 'image_url', 'content', 'created_on','status')
+        fields = ('title', 'author_name', 'image_url',
+                  'content', 'created_on', 'status')
 
     created_on = forms.DateField(widget=DatePicker(options={
                 'minDate': '2021-11-01',
@@ -22,6 +27,8 @@ class PostForm(forms.ModelForm):
         for field_name, field in self.fields.items():
                 field.widget.attrs['class'] = 'contact-border rounded-0'
 
+
+# Comment form #
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment

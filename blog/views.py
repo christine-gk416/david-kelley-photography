@@ -1,19 +1,17 @@
-from django.db.models.fields import SlugField
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Post, Comment
-from .forms import CommentForm, PostForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 
+from .models import Post, Comment
+from .forms import CommentForm, PostForm
+
+
 def blog(request):
-    """ A view to show all products, including sorting and search queries """
+    """ A view to show all blog posts and comment count """
     comments = Comment.objects.all()
     posts = Post.objects.all()
-    
-   
 
-   
     context = {
         'posts': posts,
         'comments': comments,
@@ -23,11 +21,12 @@ def blog(request):
 
 
 def post_detail(request, slug):
+    """ A view to show individual blog posts by unique url slug """
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.filter(active=True)
     new_comment = None
 
-#Blog comment
+    # Blog comment view based on Djano Central guide
     # Comment posted
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
@@ -49,21 +48,22 @@ def post_detail(request, slug):
         'comment_form': comment_form
     }
 
-    return render(request, 'blog/post_detail.html', 
-                    context)
+    return render(request, 'blog/post_detail.html',
+                  context)
 
 
 @login_required
 def like_post(request, slug):
+    """ Users can like posts if logged in """
     post = get_object_or_404(Post, id=request.POST.get('like_id'))
-    
+
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
-        
+
     else:
-         post.likes.add(request.user)
-    
-    return HttpResponseRedirect(reverse ('post_detail', args=[str(slug)]))
+        post.likes.add(request.user)
+
+    return HttpResponseRedirect(reverse('post_detail', args=[str(slug)]))
 
 
 @login_required
@@ -76,17 +76,23 @@ def add_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
+            # Save post form but don't commit
             post = form.save(commit=False)
+            # Assign author to current user
             post.author = request.user
+            # Then save blog post to database
             post.save()
             messages.success(request, 'Successfully added post!')
+            # Slugify post title and open new post detail
             return redirect(reverse('post_detail', args=[post.slug]))
         else:
-            messages.error(request, 'Failed to add post. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to add post.\
+                            Please ensure the form is valid.')
     else:
         form = PostForm()
 
-    posts = Post.objects.all() 
+    posts = Post.objects.all()
     template = 'blog/add_post.html'
     context = {
         'form': form,
@@ -108,10 +114,11 @@ def edit_post(request, slug):
         form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated product!')
+            messages.success(request, 'Successfully updated post!')
             return redirect(reverse('post_detail', args=[post.slug]))
         else:
-            messages.error(request, 'Failed to update post. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update post. \
+                           Please ensure the form is valid.')
     else:
         form = PostForm(instance=post)
         messages.info(request, f'You are editing {post.title}')

@@ -1,29 +1,33 @@
 from django import forms
-from .models import Contact
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Row, Column, Submit
+
+from .models import Contact
+
+
 class ContactForm(forms.ModelForm):
 
-# Select specific form fields from the model#
+    # Select specific form fields from the model#
     class Meta:
         model = Contact
         fields = ('name', 'email', 'subject', 'message')
 
-# Style the crispy form with layout and custom css #
+    # Style the crispy form with layout and custom css #
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'post'
-        self.helper.add_input(Submit ('submit', 'Send message', css_class="form-button"))
+        self.helper.add_input(Submit('submit', 'Send message',
+                                     css_class="form-button"))
         self.helper.layout = Layout(
             Row(
                 Column('name', css_class="col-lg-6"),
-                Column('email', css_class="col-lg-6" ),
+                Column('email', css_class="col-lg-6"),
                 css_class='form-row'),
-            Row (
+            Row(
                 Column('subject')
             ),
-            Row (
+            Row(
                 Column('message')
             )
         )

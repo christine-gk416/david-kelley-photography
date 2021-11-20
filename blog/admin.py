@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Post, Comment
 
+
+# Blog Content
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'status', 'created_on')
     list_filter = ("status",)
@@ -9,8 +11,8 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 
-# Blog Comments
 
+# Blog Comments
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'body', 'post', 'created_on', 'active')

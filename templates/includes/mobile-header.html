@@ -1,7 +1,7 @@
 <!-- Mobile button and modal -->
 <div class="col-2 mobile-navigation">
   <!-- Menu modal button -->
-  <button id="sized" type="button" class="menu" aria-label="Mobile nav button" role="none">
+  <button id="sized" type="button" class="menu" aria-label="Mobile nav button" name="Mobile nav button">
     <span></span>
   </button>
 
@@ -15,7 +15,7 @@
         <ul>
         <!-- Account dropdown to display on smaller mobile screens -->
           <li class="dropdown list-inline-item desktop-nav-account2">
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            <a class="dropdown-toggle navbarDropdown" href="#" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 My Account 
             </a>
@@ -42,7 +42,7 @@
           <li><a href="{% url 'about' %}">About me</a></li>
           <li><a href="{% url 'blog' %}">Blog</a></li>
           <li class="dropdown list-inline-item">
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            <a class="dropdown-toggle navbarDropdown" href="#" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 Shop photography
             </a>
@@ -64,7 +64,7 @@
           <strong>Contact</strong>
           <br>David Kelley | +1 717-439-0001 |
         
-          <a href="mailto: david.kelley.photos@gmail.com" target="_blank" rel="noopener">
+          <a href="mailto:david.kelley.photos@gmail.com" target="_blank" rel="noopener">
             david.kelley.photos@gmail.com
           </a>
         </p>
