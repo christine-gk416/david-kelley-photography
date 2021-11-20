@@ -12,7 +12,7 @@
                 aria-haspopup="true" aria-expanded="false">
                 Shop photography
             </a>
-            <div class="dropdown-menu" aria-labelledby="Product category dropdown">
+            <div class="dropdown-menu" aria-label="Product category dropdown">
                 <a class="dropdown-item" href="{% url 'products' %}">Shop All</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'products' %}?category=mountain_photography">Montain Photography</a>
@@ -45,7 +45,7 @@
                     <p class="my-0 mobile-price">My Account</p>
                 </div>
             </a>
-            <div class="dropdown-menu border-1" aria-labelledby="user-options">
+            <div class="dropdown-menu border-1" aria-label="user-options">
                 <!-- Check if user is logged in -->
                 {% if request.user.is_authenticated %}
                     <!-- Check if user is superuser -->
