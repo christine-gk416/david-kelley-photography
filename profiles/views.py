@@ -12,12 +12,6 @@ from .forms import UserProfileForm
 @login_required
 def add_to_wishlist(request, id):
     product = get_object_or_404(Product, id=id)
-    
-    # liked_products = product.objects.annotate(
-    #     liked=Exists(product.users_wishlist.through.objects.filter(
-    #         UserProfile=request.user, product=OuterRef('pk')
-    #     ))
-    # ).filter(is_approved=True)
 
     if product.users_wishlist.filter(id=request.user.id).exists():
         product.users_wishlist.remove(request.user)
@@ -25,12 +19,6 @@ def add_to_wishlist(request, id):
     else:
         product.users_wishlist.add(request.user)
         messages.success(request, "Added " + product.name + " to your WishList")
-
-    # liked_products = product.objects.filter(users_wishlist=request.user)
-
-    # context ={
-    #     'liked_products': liked_products,
-    # }
 
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
 

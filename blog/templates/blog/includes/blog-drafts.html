@@ -1,16 +1,17 @@
-<!-- Display blog drafts on profile if drafts are present -->
 
-<div class="container">
-    <div class="row my-5">
-    {% for post in posts %}
-        <!-- Check if blog post is draft -->
-        {% if post.status == 0 %}
-
+{% comment %} {% if post in posts %} {% endcomment %}
+<div class="container mt-5">
+    <hr class="w-50 mb-1">
+    <div class="col-12 text-center my-3">
+        <h2>Blog post drafts</h2>
         <hr class="w-50 mb-1">
-        <div class="col-12 text-center my-3">
-            <h2>Blog post drafts</h2>
-            <hr class="w-50 mb-1">
-        </div>
+        <p class="m-4">List of all blog daft posts waiting for publication.</p>
+    </div>
+    <!-- Display blog drafts on profile if drafts are present -->
+    {% for post in posts %}
+    <!-- Check if blog post is draft -->
+        {% if post.status == 0 %}
+        <div class="row my-5">
         <div class="col-lg-4">
             <!-- Blog content from model -->
             <div class="blog-grid">
@@ -63,9 +64,9 @@
                         </div>
                     {% endif %}
                 </div>
-            </div>
+            </div>  
         </div>
-        {% endif %}
-    {% endfor %}     
     </div>
+        {% endif %}
+    {% endfor %} 
 </div> 

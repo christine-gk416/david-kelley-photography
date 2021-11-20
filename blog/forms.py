@@ -5,7 +5,7 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'author_name', 'author','image_url', 'content', 'created_on','status')
+        fields = ('title', 'author_name', 'image_url', 'content', 'created_on','status')
 
     created_on = forms.DateField(widget=DatePicker(options={
                 'minDate': '2021-11-01',

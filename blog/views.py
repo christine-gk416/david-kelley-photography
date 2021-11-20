@@ -76,7 +76,9 @@ def add_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save()
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
             messages.success(request, 'Successfully added post!')
             return redirect(reverse('post_detail', args=[post.slug]))
         else:
@@ -84,7 +86,7 @@ def add_post(request):
     else:
         form = PostForm()
 
-    posts = Post.objects.all()    
+    posts = Post.objects.all() 
     template = 'blog/add_post.html'
     context = {
         'form': form,
