@@ -1,1 +1,20 @@
-<h1>Test</h1>
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<!-- Home hero image -->
+{% include 'home/includes/home-banner.html'%}
+{% endblock %}
+
+{% block content %}
+
+<div class="containter">
+    <div class="row">
+        <div class="col-12 justify-content-center">
+            <h1>500 Server Error</h1>
+            <a href="/" type="button" class="btn btn-lg btn-danger">Go back home</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

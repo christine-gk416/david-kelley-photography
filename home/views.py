@@ -14,11 +14,3 @@ def index(request):
     }
 
     return render(request, 'home/index.html', context)
-
-
-# def error_404(request, exception, template='templates/404.html'):
-#     return render(request, template)
-
-
-# def error_500(request, template='templates/500.html'):
-#     return render(request, template)
