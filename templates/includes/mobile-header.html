@@ -15,11 +15,11 @@
         <ul>
         <!-- Account dropdown to display on smaller mobile screens -->
           <li class="dropdown list-inline-item desktop-nav-account2">
-            <a class="dropdown-toggle navbarDropdown" href="#" role="button" data-toggle="dropdown"
+            <a class="dropdown-toggle navbarDropdown" href="#" role="button" data-toggle="dropdown" id="my-account-dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 My Account 
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="my-account-dropdown">
             <!-- Check if user is logged in -->
               {% if request.user.is_authenticated %}
                   <!-- Check if user is superuser -->
@@ -42,11 +42,11 @@
           <li><a href="{% url 'about' %}">About me</a></li>
           <li><a href="{% url 'blog' %}">Blog</a></li>
           <li class="dropdown list-inline-item">
-            <a class="dropdown-toggle navbarDropdown" href="#" role="button" data-toggle="dropdown"
+            <a class="dropdown-toggle navbarDropdown" id="shop-photograpy" href="#" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 Shop photography
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="shop-photograpy">
                 <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
                   <a class="dropdown-item" href="{% url 'products' %}?category=mountain_photography">Montain Photography</a>
                 <a class="dropdown-item" href="{% url 'products' %}?category=desert_photography">Desert Photography</a>
