@@ -8,13 +8,13 @@
       <div>
         <p class="font-weight-bold">
           {{ comment.name }}
-          <span class="text-muted font-weight-normal">
+          <div class="text-muted font-weight-normal">
             {{ comment.created_on }}
-          </span>
+          </div>
         </p>
-        <span class="font-weight-normal">
+        <div class="font-weight-normal">
         {{ comment.body | linebreaks }}
-        </span>
+        </div>
         <hr>
       </div>
       {% endfor %}
