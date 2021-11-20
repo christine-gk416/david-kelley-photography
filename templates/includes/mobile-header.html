@@ -19,7 +19,7 @@
                 aria-haspopup="true" aria-expanded="false">
                 My Account 
             </a>
-            <div class="dropdown-menu" aria-label="Dropdown">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <!-- Check if user is logged in -->
               {% if request.user.is_authenticated %}
                   <!-- Check if user is superuser -->
@@ -46,7 +46,7 @@
                 aria-haspopup="true" aria-expanded="false">
                 Shop photography
             </a>
-            <div class="dropdown-menu" aria-label="Dropdown">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
                   <a class="dropdown-item" href="{% url 'products' %}?category=mountain_photography">Montain Photography</a>
                 <a class="dropdown-item" href="{% url 'products' %}?category=desert_photography">Desert Photography</a>
