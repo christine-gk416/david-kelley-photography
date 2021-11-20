@@ -21,13 +21,13 @@ def about(request):
                       sender, ['david.kelley.photos@gmail.com'])
             form.save()
 
-            # Show a message if the form goes through #
+            # Show a message if the form goes through
             messages.success(request,
                              "Thanks for your message! \
                              We'll be in touch soon.")
             return redirect('about')
         else:
-            # Throw an error message if the form doesn't go through #
+            # Throw an error message if the form doesn't go through
             messages.error(request,
                            'Message send failed. \
                             Please ensure the form is valid.')

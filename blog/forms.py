@@ -4,14 +4,14 @@ from .models import Comment, Post
 from django import forms
 
 
-# Add/edit blog post form #
 class PostForm(forms.ModelForm):
+    """ Blog Post Form"""
 
     class Meta:
         model = Post
         fields = ('title', 'author_name', 'image_url',
                   'content', 'created_on', 'status')
-
+    # Tempus Dominus date field
     created_on = forms.DateField(widget=DatePicker(options={
                 'minDate': '2021-11-01',
                 'maxDate': '2023-01-20',
@@ -28,8 +28,8 @@ class PostForm(forms.ModelForm):
                 field.widget.attrs['class'] = 'contact-border rounded-0'
 
 
-# Comment form #
 class CommentForm(forms.ModelForm):
+    """ Blog Post Comment Form """
     class Meta:
         model = Comment
         fields = ('name', 'email', 'body')

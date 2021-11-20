@@ -46,7 +46,7 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-
+    # Get a list of  3 random products with unique id
     related_products = list(product.category.products.exclude(id=product.id))
 
     if len(related_products) >= 3:

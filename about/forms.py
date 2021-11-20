@@ -6,7 +6,7 @@ from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
-
+    """ Contact form on About page """
     # Select specific form fields from the model#
     class Meta:
         model = Contact
