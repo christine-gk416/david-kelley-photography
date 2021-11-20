@@ -2,12 +2,12 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from django.db.models import Exists, OuterRef
 
 from checkout.models import Order
 from products.models import Product
 from .models import UserProfile
 from .forms import UserProfileForm
+
 
 @login_required
 def add_to_wishlist(request, id):
@@ -15,10 +15,12 @@ def add_to_wishlist(request, id):
 
     if product.users_wishlist.filter(id=request.user.id).exists():
         product.users_wishlist.remove(request.user)
-        messages.success(request, product.name + " has been removed from your WishList")
+        messages.success(request,
+                         product.name + " has been removed from your WishList")
     else:
         product.users_wishlist.add(request.user)
-        messages.success(request, "Added " + product.name + " to your WishList")
+        messages.success(request,
+                         "Added " + product.name + " to your WishList")
 
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
 
@@ -40,10 +42,11 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(request,
+                           'Update failed. Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
-        
+
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'

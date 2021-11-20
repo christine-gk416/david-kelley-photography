@@ -10,8 +10,8 @@ STATUS = (
 )
 
 
-# Blog Post Model
 class Post(models.Model):
+    """Blog post model"""
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
@@ -36,8 +36,8 @@ class Post(models.Model):
         return self.title
 
 
-# Comment Model
 class Comment(models.Model):
+    """Comment model"""
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name='comments')
     name = models.CharField(max_length=80)

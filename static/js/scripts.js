@@ -24,11 +24,11 @@ span.onclick = function() {
     if (event.target == modal) {
        modal.style.display = "none";
        }
-    }
+    };
 };
 
 // Tooltips //
 
 $(function () {
-   $('[data-toggle="tooltip"]').tooltip()
- })
+   $('[data-toggle="tooltip"]').tooltip();
+ });

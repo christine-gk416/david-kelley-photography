@@ -1,52 +1,51 @@
 /* Profile */
 
 .order-history {
-    max-height: 416px; /* height of profile form + submit button */
-    overflow-y: auto;
+  max-height: 416px; /* height of profile form + submit button */
+  overflow-y: auto;
 }
 
 #profile-update-form .form-control {
-    color: #000;
+  color: #000;
 }
 
 #profile-update-form input::placeholder {
-    color: #aab7c4;
+  color: #aab7c4;
 }
 
 #id_default_country,
 #id_default_country option:not(:first-child) {
-    color: #000;
+  color: #000;
 }
 
 #id_default_country option:first-child {
-    color: #aab7c4;
+  color: #aab7c4;
 }
 
 .btn-wishlist {
-    font-family: 'Ubuntu', sans-serif;
-    background: #DDA15E;
-    color: #0a0e06;
-    min-width: 260px;
-    border: 2px dashed #0a0e06;
+  font-family: 'Ubuntu', sans-serif;
+  background: #dda15e;
+  color: #0a0e06;
+  min-width: 260px;
+  border: 2px dashed #0a0e06;
 }
 
 .btn-wishlist:hover {
-    background:#606c38;
-    color: #fefae0;
-    text-decoration: underline;
+  background: #606c38;
+  color: #fefae0;
+  text-decoration: underline;
 }
 
 /* Wishlist */
 
 .btn-remove-wishlist {
-    border: 1.5px dashed;
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #DA5844;
-    color: white;
+  border: 1.5px dashed;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #da5844;
+  color: white;
 }
 
 .btn-remove-wishlist:hover {
-    background:#DA962F;
-    text-decoration: underline;
+  background: #da962f;
+  text-decoration: underline;
 }
-
