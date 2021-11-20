@@ -41,13 +41,13 @@
                                                 {{ product.name }} 
                                                 {% if user.id in liked_products %}
                                                 <!-- Product wishlist button -->
-                                                <a href="{% url "user_wishlist" product.id %}" class="select-heart pl-2" aria-label="Product wishlist button" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
+                                                <a href="{% url "user_wishlist" product.id %}" class="select-heart pl-2" aria-label="Button" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
                                                     <i class="fas fa-heart fa-lg">
                                                     </i>
                                                 </a>
                                                 {% else %}
                                                 <a href="{% url "user_wishlist" product.id %}" class="wishlist-heart pl-2" 
-                                                aria-label="Product wishlist button" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
+                                                aria-label="Button" data-toggle="tooltip" data-placement="right" title="Sign in to add to wishlist">
                                                     <i class="fas fa-heart fa-lg">
                                                     </i>
                                                 </a>
