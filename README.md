@@ -368,16 +368,27 @@ Set environment variables:
 
 Click on the Settings tab and then click reveal Config Vars.
 Variables added:
+
 AWS_ACCESS_KEY_ID
+
 AWS_SECRET_ACCESS_KEY
+
 DATABASE_URL
+
 EMAIL_HOST_PASS
+
 EMAIL_HOST_USER
+
 SECRET_KEY
+
 STRIPE_PRICE_ID
+
 STRIPE_PUBLIC_KEY
+
 STRIPE_SECRET_KEY
+
 STRIPE_WH_SECRET
+
 USE_AWS
 
 Enable automatic deployment:
