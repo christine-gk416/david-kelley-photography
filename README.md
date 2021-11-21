@@ -107,6 +107,16 @@ Superusers can make updates to the site on pages that regular users won't have a
 
 ### Structure
 
+This website allows users to access different parts of the site depending on if they're logged in/have an account. Users are also limited to parts of the site based on their permission status.
+
+Guest users: can access the home, about, blog, products, cart, and checkout pages. They can make purchases on the site, but cannot save their information. They will recieve an email confirmation when an order is placed. They can also comment on blog posts and send a contact form to the site owner.
+
+Registered users: can login to the site. Once logged in, they can access their Profile page and Wishlist. Logged in users can view and edit their shipping information. They can also view all their orders on the Profile page. Register users can add items to their wishlist when logged in.
+
+Superusers: can add, edit, delete prodcuts and blog posts. They have access to Product Management and Manage Blog Post pages. They can also moderate commments on the blog through the Django admin.
+
+If the user tries to access a page with the incorrect permissions, an error message will appear.
+
 
 ### Wireframes
 
@@ -179,7 +189,7 @@ Products
 + Products
 
 Profiles
-+UserProfile
++ UserProfile
 
 ### Database Schema
 
