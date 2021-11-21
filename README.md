@@ -271,11 +271,58 @@ Profiles
 
 For future releases, I plan to make the products page more robust so that customers can customise their order such as adding more dimensions at different price points and add a photo frame to their order.
 
+## Testing
 
-  
+Read testing file [here](static/docs/Testing.md).
+
+
+## Technologies Used
+
+### Languages
++ HTML5, CSS3, JavaScript, Python
+
+### Planning site
+
++ [Figma](https://figma.com/) was used to create Wireframes and style system.
++ [Coolors](https://coolors.co/) was used to create site colour palettes.
++ [QuickDBD](https://www.quickdatabasediagrams.com/) was used to model database structure.
++ [Trello](https://trello.com/) was used to plan user stories and scope out features.
++ [Gimp](https://www.gimp.org/) was used to edit image dimensions and crop images.
++ [TinyJPG](https://tinypng.com/) used to minify image file sizes.
++ [Responsive Design Checker](https://responsivedesignchecker.com/) was used to check the site design and responsiveness on different devices.
++ [Lambda Test](https://www.lambdatest.com/) was used to check the site on different browsers and operating systems.
++ [WebAccessibility](https://www.webaccessibility.com/) was used to test how accessible the site is.
    
+### Libraries and Frameworks
+
++ [Django](https://www.djangoproject.com/) was used to create templates and manage the project.
+
++ [Bootstrap 4](https://getbootstrap.com/) was used to format the site design with their built-in CSS and JS.
+
++ [FontAwesome 5.15.4](https://fontawesome.com/) is used for social links and the rating stars.
+
++ [Google Fonts](https://fonts.google.com/) is used for most fonts on the site.
+
++ [jQuery](https://jquery.com/) to easily manipulate the DOM and update Bootstrap tools that require initialization.
+
+### Required modules
+
+All modules required are located in the [requirements.txt](requirements.txt) file.
+
+### Development tools
+
++ [Git](https://git-scm.com/) is used to track changes made to the repository and for version control.
++ [GitHub](https://github.com/) is used to store the project and to share the project.
++ [VS Code](https://code.visualstudio.com/) is used with the CI base template as an IDE (integrated development environment) to develop, commit, and push files to GitHub.
 
 
+### Deployment/Hosting
+
++ [Heroku](https://id.heroku.com/login) is used to deploy and host the live site content.
+
+### Static and media file storage
+
++ [AWS](https://aws.amazon.com/) was used to store static files and media files so that they work correctly on the deployed site
 
 
 
