@@ -70,7 +70,7 @@ Users
 + Browse landscape photographs by category
 + See related products in the same category
 + Choose a mat colour to back the photograph
-+ Purchase products securly over Stripe and recieve a confirmation email
++ Purchase products securely over Stripe and receive a confirmation email
 + Create an account to save shopper details
 + Save products for later in a wishlist
 + Access all order details
@@ -79,7 +79,7 @@ Users
 
 Site Owner
 
-+ Recieve contact forms through Django admin and direct email message
++ Receive contact forms through Django admin and direct email message
 + Add/edit/delete products
 + Add/edit/delete blog posts
 + Access blog post drafts on the site
@@ -100,7 +100,7 @@ For this project, the main aim was to create a simply Ecommerce site to sell lan
 
 To convert general users into customers, a blog was planned with information about the photographer, his artwork, and meditations on different landscapes. All users can engage with this blog and there's a call to action sidebar to help direct these users to make purchases. 
 
-Existing customers will have the option to login, view order and shipping information in their profile, and save products in a wishlist. This will keep exisiting customers engaged with the site content and encourage them to come back and make more purchases.
+Existing customers will have the option to login, view order and shipping information in their profile, and save products in a wishlist. This will keep existing customers engaged with the site content and encourage them to come back and make more purchases.
 
 Superusers can make updates to the site on pages that regular users won't have access to. The superusers can add/update/delete products and content on the blog.
 
@@ -109,9 +109,9 @@ Superusers can make updates to the site on pages that regular users won't have a
 
 ### Wireframes
 
-Note: I combined the wireframs for some forms since their design is similar
+Note: I combined the wireframes for some forms since their design is similar
 
-| All Wireframs from Figma |     
+| All Wireframes from Figma |     
 | ----------- | 
 | [Home](https://www.figma.com/file/dZz9h1LTx9RT6xNIFdwAZb/Milestone-4-styles?node-id=106%3A2)     | 
 | [About](https://www.figma.com/file/dZz9h1LTx9RT6xNIFdwAZb/Milestone-4-styles?node-id=107%3A870)  |
@@ -133,6 +133,17 @@ Note: I combined the wireframs for some forms since their design is similar
 
 #### Colours
 
-The colours for this site are autumnal/earth tones that match the aesthetic of the store owner. The palette was created on (Coolors)[https://coolors.co/]:
+The colours for this site are autumnal/earth tones that match the aesthetic of the store owner. The palette was created on [Coolors](https://coolors.co/):
 
 ![David Kelley Photography colour palette](https://i.ibb.co/ZYDPY1j/David-Kelley-palette.png)
+
+### Fonts
+
+The branding font for the site is David Libre.
+
+The main headings are Goudy Bookletter 1911 and Zen Antique Soft. Paragraph sections are Lato font. The navlinks in the header and footer are Aleo and custom buttons are Ubuntu. 
+
+These fonts were chose to be easy to read and have a vintage/artistic look.
+
+
+The full style pack was planned out in Figma and you can view the style pack [here](https://www.figma.com/file/dZz9h1LTx9RT6xNIFdwAZb/Milestone-4-styles?node-id=2%3A4).
