@@ -173,6 +173,10 @@ Products
 
 Profiles
 
+### Database Schema
+
+![Database Schema](https://i.ibb.co/3s1HPHj/database-schema.png)
+
 ## Features
 
 ### Existing features
