@@ -125,3 +125,14 @@ Note: I combined the wireframs for some forms since their design is similar
 | [Blog](https://www.figma.com/file/dZz9h1LTx9RT6xNIFdwAZb/Milestone-4-styles?node-id=106%3A138) |  
 | [Blog post](https://www.figma.com/file/dZz9h1LTx9RT6xNIFdwAZb/Milestone-4-styles?node-id=107%3A681) |  
 | [Register/Login](https://www.figma.com/file/dZz9h1LTx9RT6xNIFdwAZb/Milestone-4-styles?node-id=107%3A1099) |  
+
+### Database structure
+
+### Design
+
+
+#### Colours
+
+The colours for this site are autumnal/earth tones that match the aesthetic of the store owner. The palette was created on (Coolors)[https://coolors.co/]:
+
+![David Kelley Photography colour palette](https://i.ibb.co/ZYDPY1j/David-Kelley-palette.png)
