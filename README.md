@@ -84,3 +84,12 @@ Site Owner
 + Add/edit/delete blog posts
 + Access blog post drafts on the site
 + Design focus on owner's personal style and taste
+
+
+### User Stories:
+
+
+You can view an organised board with all user stories here:
+
+
+[User Stories for Milestone 4 Trello Board](https://trello.com/b/e7RIsmL0/milestone-4-user-stories)
