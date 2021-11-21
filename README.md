@@ -25,3 +25,37 @@ expiration date: 04 / 24
 CVC: 424
 
 ZIP: 42424
+
+------
+
+## Table of Contents
+
+  
+
++  [Ux](#ux-planning)
+
+    - [User Stories](#user-stories)
+    - [Scope](#scope)
+    - [Structure](#structure)
+    - [Wireframes](#wireframes)
+    - [Database](#database-structure)
+    - [Design](#design-choices) 
+
++  [Features](#features)
+
++  [Technologies used](#technologies-used)
+
++  [Testing](#testing)
+
++  [Deployment](#deployment)
+
++  [Credits](#credits)
+
+
+------
+
+
+## UX Planning
+  
+
+### Project Goals:
