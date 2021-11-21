@@ -1,5 +1,0 @@
-"python.linting.pylintArgs": [
-    "--load-plugins=pylint_django",
-    "--load-plugins=pylint_django.checkers.migrations",
-    "--django-settings-module=david_kelley.settings"
-  ]
