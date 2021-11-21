@@ -109,7 +109,7 @@ Superusers can make updates to the site on pages that regular users won't have a
 
 ### Wireframes
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+| All Wireframs from Figma |     
+| ----------- | 
+| [Home](https://www.figma.com/file/dZz9h1LTx9RT6xNIFdwAZb/Milestone-4-styles?node-id=106%3A2)     | 
+| Paragraph   |
