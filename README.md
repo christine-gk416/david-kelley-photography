@@ -17,6 +17,9 @@ The project is developed using Django, Python, JavaScript, HTML, CSS, and the Bo
 To make test payments use this Stripe test card:
 
 credit card: 4242 4242 4242 4242
+
 expiration date: 04 / 24
+
 CVC: 424
+
 ZIP: 42424
