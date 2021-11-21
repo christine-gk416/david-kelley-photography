@@ -158,12 +158,19 @@ For development, I used the sqlite3 database that comes with Djanga. A PostgreSQ
 ### Django apps and models
 
 Home
+
 About
+
 Blog
+
 Cart
+
 Checkout
+
 David_kelley
+
 Products
+
 Profiles
 
 ## Features
