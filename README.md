@@ -1,4 +1,4 @@
-#David Kelley Photography
+# David Kelley Photography
 
 View live site: [David Kelley Photography](https://david-kelley-photography.herokuapp.com/)
 
