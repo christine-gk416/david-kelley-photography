@@ -14,6 +14,8 @@ David Kelley Photography is a business to consumer (B2C) site intended for site 
 
 The project is developed using Django, Python, JavaScript, HTML, CSS, and the Bootstrap framework.
 
+**This is currently a test project and the products aren't available for sale**
+
 To make test payments use this Stripe test card:
 
 credit card: 4242 4242 4242 4242
