@@ -126,7 +126,6 @@ Note: I combined the wireframes for some forms since their design is similar
 | [Blog post](https://www.figma.com/file/dZz9h1LTx9RT6xNIFdwAZb/Milestone-4-styles?node-id=107%3A681) |  
 | [Register/Login](https://www.figma.com/file/dZz9h1LTx9RT6xNIFdwAZb/Milestone-4-styles?node-id=107%3A1099) |  
 
-### Database structure
 
 ### Design
 
@@ -147,3 +146,76 @@ These fonts were chose to be easy to read and have a vintage/artistic look.
 
 
 The full style pack was planned out in Figma and you can view the style pack [here](https://www.figma.com/file/dZz9h1LTx9RT6xNIFdwAZb/Milestone-4-styles?node-id=2%3A4).
+
+
+## Database structure
+
+### Databases used
+
+For development, I used the sqlite3 database that comes with Djanga. A PostgreSQL database through Heroku is in use for the deployed live site. 
+
+### Django apps and models
+
+Home
+About
+Blog
+Cart
+Checkout
+David_kelley
+Products
+Profiles
+
+## Features
+
+### Existing features
+
++ Navigation Bar
+  + Built with Bootstrap
+  + Dropdowns for Account link and Category link
+
++ Mobile nav modal
+  + Open a modal when the hamburger icon is clicked on
+  + Close modal on X button
+  + Display main navlinks, dropdowns, and account link in modal
+
++ Desktop and mobile navbar
+  + Display specific Account links depending on if the user is logged out, logged in, or is a superuser
+  + Cart will display total and change colour if there is content in the cart
+
++ Footer
+  + Branding link back to homepage
+  + Footer navigation links to main pages
+  + Contact button that links directly to form on About page
+
++ Home app
+  + Call to action button: Shop Now to products page
+  + Category navigation gallery that will short products by category if you click on an image
+  + Featured blog posts that show 3 most recent blog posts -User story-
+
++ About app
+  + Contact form that saves to database and sends email notifcation to site owner -User story-
+
++ Blog app
+  + Blog page
+    + Card that displays content from each blog post -User story-
+    + Link to the full blog post
+    + Comment counter
+    + Option to edit/delete blog posts -Superuser-
+  + Blog details
+    + Full blog post content 
+    + Moderated comment section and comment form -User story-
+    + Button to like blog post -User story-
+    + Blog sidebar that links to products page
+    + Option to edit/delete blog posts -Superuser-
+  + Add blog -Superuser-
+    + Form to add new blog posts -User story-
+    + Display draft blog posts to edit or delete
+  + Edit blog -Superuser-
+    + Form to edit blog posts -User story-
+
+
+
+
+
+
+
