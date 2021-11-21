@@ -93,3 +93,20 @@ You can view an organised board with all user stories here:
 
 
 [User Stories for Milestone 4 Trello Board](https://trello.com/b/e7RIsmL0/milestone-4-user-stories)
+
+### Scope
+
+For this project, the main aim was to create a simply Ecommerce site to sell landscape photography from the site owner directly to customers so that proceeds from purchases can be donated to charities like Hospice of Central Pennsylvania and Bethesda Mission. This site was built desktop first with older users in mind. Elegant mobile and tablet design was also considered for all users. 
+
+To convert general users into customers, a blog was planned with information about the photographer, his artwork, and meditations on different landscapes. All users can engage with this blog and there's a call to action sidebar to help direct these users to make purchases. 
+
+Existing customers will have the option to login, view order and shipping information in their profile, and save products in a wishlist. This will keep exisiting customers engaged with the site content and encourage them to come back and make more purchases.
+
+Superusers can make updates to the site on pages that regular users won't have access to. The superusers can add/update/delete products and content on the blog.
+
+### Structure
+
+
+### Wireframes
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FdZz9h1LTx9RT6xNIFdwAZb%2FMilestone-4-styles%3Fnode-id%3D106%253A2" allowfullscreen></iframe>
