@@ -163,7 +163,7 @@ The full style pack was planned out in Figma and you can view the style pack [he
 
 ### Databases used
 
-For development, I used the sqlite3 database that comes with Djanga. A PostgreSQL database through Heroku is in use for the deployed live site. 
+For development, I used the sqlite3 database that comes with Django. A PostgreSQL database through Heroku is in use for the deployed live site. 
 
 ### Django apps and models
 
