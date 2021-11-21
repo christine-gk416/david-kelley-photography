@@ -59,3 +59,28 @@ ZIP: 42424
   
 
 ### Project Goals:
+
+Users
+
++ To easily navigation the site and understand its purpose
++ Learn about the site owner and the charities purchase proceeds go to
++ Contact the site owner directly through a form
++ Learn about the photography in the site's blog
++ Comment on and like blog posts
++ Browse landscape photographs by category
++ See related products in the same category
++ Choose a mat colour to back the photograph
++ Purchase products securly over Stripe and recieve a confirmation email
++ Create an account to save shopper details
++ Save products for later in a wishlist
++ Access all order details
+
+
+
+Site Owner
+
++ Recieve contact forms through Django admin and direct email message
++ Add/edit/delete products
++ Add/edit/delete blog posts
++ Access blog post drafts on the site
++ Design focus on owner's personal style and taste
