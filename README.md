@@ -305,6 +305,10 @@ Read testing file [here](static/docs/Testing.md).
 
 + [jQuery](https://jquery.com/) to easily manipulate the DOM and update Bootstrap tools that require initialization.
 
+### Payment processors
+
++ [Stripe](https://stripe.com/ie) is used to process payments on the site. 
+
 ### Required modules
 
 All modules required are located in the [requirements.txt](requirements.txt) file.
@@ -324,7 +328,115 @@ All modules required are located in the [requirements.txt](requirements.txt) fil
 
 + [AWS](https://aws.amazon.com/) was used to store static files and media files so that they work correctly on the deployed site
 
+## Deployment
+
+### Required technology
+
+-   **Django**: to create multiple apps in the project and manage templates
+-   **Python3**: write the code and run the project through Django
+-   **PIP**: install packages
+-   **Git**: version control
+-   **VSC:** IDE used to create this project.
+-   **Postgre**:  as the database to create content, add new content, and manage data
+-   **Heroku**: to deploy the project and manage the app
+
+### Deployment to Heroku
+
+Create a new application in Heroku:
+
+1. Navigate to Heroku.com and login.
+2. Click on the new button.
+3. Select Create New App.
+4. Enter a uniquge app name.
+5. Select your current region.
+
+Set up connection to Github Repository:
+
+1. Click the deploy tab and select GitHub - Connect to GitHub.
+2. A prompt to find a github repository to connect to will then be displayed.
+3. Enter the repository name for the project and click search to find your repository.
+4. Click the connect button.
+
+Add PostgreSQL Database:
+
+1. Click the Resources tab.
+2. Under Add-ons seach for Heroku Postgres and then click on it when it appears.
+3. Select Plan name Hobby Dev - Free and then click Submit Order Form.
+
+Set environment variables:
+
+Click on the Settings tab and then click reveal Config Vars.
+Variables added:
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+DATABASE_URL
+EMAIL_HOST_PASS
+EMAIL_HOST_USER
+SECRET_KEY
+STRIPE_PRICE_ID
+STRIPE_PUBLIC_KEY
+STRIPE_SECRET_KEY
+STRIPE_WH_SECRET
+USE_AWS
+
+Enable automatic deployment:
+
+1. Click the Deploy tab
+2. In the Automatic deploys section, choose the branch you want to deploy from then click Enable Automation Deploys.
+
+### Clone and run locally
+
+1. Go to the Github repository for Horror House Reviews and click the Code dropdown
+2. Click Download Zip, unzip the files, and upload the files to the IDE of your choice. 
+3. Upload these files to your IDE
+4. In the terminal, install the requirements.txt file using:
+
+        pip3 install -r requirements.txt
+
+5. Create an env.py file in your IDE with this command:
+
+        touch env.py 
+
+6. Add your AWS, Stripe, and your email hidden keys to the env.py file.
 
 
+7. Store the env.py file in your .gitignore file so that this sensitive information is hidden on your GitHub repository. 
 
+8. You can now run the app on your IDE by running this command in your terminal: 
 
+        python3 manage.py runserver
+
+## Credits
+
+### Code
+
++ The base code for this project is from the Code Institute Boutique Ado project
++ Site footer is based on free Bootstrap footer templates [here](https://mdbootstrap.com/docs/standard/navigation/footer/)
++ Mobile modal is based on [this Codepen project](https://codepen.io/Papawhoop/pen/bwXmxq)
++ Contact form on the About page is based on this [Bootstrap template](https://mdbootstrap.com/docs/b4/jquery/forms/contact/)
++ Blog app was built by following this tutorial from [Django Central](https://djangocentral.com/building-a-blog-application-with-django/)
++ The blog like button is based on this tutorial from [Codemy](https://www.youtube.com/watch?v=PXqRPqDjDgc)
++ Wishlist is based on the code in this [Very Academy walkthrough](https://www.youtube.com/watch?v=OgA0TTKAtqQ)
++ [StackOverflow](https://stackoverflow.com/) was used to solve coding issues and ask questions
++ [Medium](https://medium.com/) was used to search for fixes in code and find instructions
++ [Django documentation](https://docs.djangoproject.com/en/3.2/) was used to learn and implement Django template features
++ [W3Schools](https://www.w3schools.com/) was used for general reference
++ [CSSTricks](https://css-tricks.com/) was used for general reference on CSS
+
+### Images
+
++ The favicon was created on [Free Favicon Maker](https://formito.com/tools/favicon)
++ Abstract image was created on [Sshape](https://fffuel.co/ssshape/)
++ All landscape photography on the site was created by David Kelley and this site is his portfolio
+
++ Freepik background image creators:
+  + https://www.freepik.com/free-photo/explosion-colored-powder-white-background_1193983.htm#page=1&position=0&from_view=collections
+  + https://www.freepik.com/freepik
+  + https://www.freepik.com/free-vector/copy-space-abstract-green-background-with-shiny-elements_12235867.htm#page=1&position=1&from_view=collections
+  + https://www.freepik.com/free-vector/abstract-background-with-watercolor-shapes-empty-space_18962624.htm#page=1&position=2&from_view=collections
+  + https://www.freepik.com/free-vector/flat-geometric-background_13817744.htm#page=1&position=3&from_view=collections
+
+### Acknowledgements
++ Thanks to my amazing mentor Mr. Spencer Barriball
++ My husband James for his support through this course
++ The Code Institute team and the Slack community
