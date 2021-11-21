@@ -281,7 +281,7 @@ For future releases, I plan to make the products page more robust so that custom
 
 ## Testing
 
-Read testing file [here](static/docs/Testing.md).
+Read testing file [here](Testing.md).
 
 
 ## Technologies Used
