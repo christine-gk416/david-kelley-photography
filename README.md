@@ -180,12 +180,16 @@ Profiles
 
 + Desktop and mobile navbar
   + Display specific Account links depending on if the user is logged out, logged in, or is a superuser
-  + Cart will display total and change colour if there is content in the cart
+  + Cart will display total and change colour if there is content in the cart and link to cart
 
 + Footer
   + Branding link back to homepage
   + Footer navigation links to main pages
   + Contact button that links directly to form on About page
+
++ Toasts
+  + Display messages when a specific change is made on the site
+  + Display checkout information after product is added to cart
 
 + Home app
   + Call to action button: Shop Now to products page
@@ -193,7 +197,7 @@ Profiles
   + Featured blog posts that show 3 most recent blog posts -User story-
 
 + About app
-  + Contact form that saves to database and sends email notifcation to site owner -User story-
+  + Contact form that saves to database and sends email notification to site owner -User story-
 
 + Blog app
   + Blog page
@@ -212,6 +216,64 @@ Profiles
     + Display draft blog posts to edit or delete
   + Edit blog -Superuser-
     + Form to edit blog posts -User story-
+
++ Cart
+  + Display up to date information about items in cart
+  + Option to update product quantity
+  + Option to remove item from cart
+  + Show total, shipping, and subtitle
+  + Button to checkout or return to products page
+
++ Checkout  
+  + Main checkout
+    + Display order information
+    + Display checkout form
+    + Give user the option to login or create account -User story-
+    + Display shipping information if user is logged in
+    + Stripe payment form
+    + Button to make a purchase or return to products page -User story-
+    + Loading modal while order goes through
+  + Order confirmation
+    + Display order information and send order confirmation -User story-
+    + Button to blog page
+
++ Products 
+  + All products
+    + Display all products in masonry style
+    + Search bar for products
+    + Sort products by category links
+    + Heart button to add items to wishlist if you're logged in -User story-
+    + Button to product details page
+  + Product details
+    + Display specific product details
+    + Inputs to add product quantity and choose mat card colour
+    + Button to add items to wishlist -User story-
+    + Buttons to add to cart or return to products page
+  + Add product -Superuser-
+    + Form to add new products posts -User story-
+  + Edit product -Superuser-
+    + Form to edit products -User story-
+
++ Profile 
+  + Profile page -User story-
+    + Give logged in user option to update shipping info
+    + Display all order information
+    + Button to Wishilist page
+  + Wishlist page -User story-
+    + Display wishlist items
+    + Delete item or go to product details page
+
++ Register/Login
+  + Allauth forms to allow users to create an account or login
+
+
+### Future features
+
+For future releases, I plan to make the products page more robust so that customers can customise their order such as adding more dimensions at different price points and add a photo frame to their order.
+
+
+  
+   
 
 
 
