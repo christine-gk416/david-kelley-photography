@@ -38,8 +38,9 @@ ZIP: 42424
     - [Scope](#scope)
     - [Structure](#structure)
     - [Wireframes](#wireframes)
-    - [Database](#database-structure)
     - [Design](#design-choices) 
+
++ [Database](#database-structure)
 
 +  [Features](#features)
 
