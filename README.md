@@ -160,22 +160,30 @@ For development, I used the sqlite3 database that comes with Djanga. A PostgreSQ
 Home
 
 About
++ Contact
 
 Blog
++ Post
++ Comments
 
 Cart
 
 Checkout
++ Order
++ OrderLineItem
 
 David_kelley
 
 Products
++ Categories
++ Products
 
 Profiles
++UserProfile
 
 ### Database Schema
 
-![Database Schema](https://i.ibb.co/3s1HPHj/database-schema.png)
+![Database Schema](https://i.ibb.co/gyHmmZj/Untitled.png)
 
 ## Features
 
