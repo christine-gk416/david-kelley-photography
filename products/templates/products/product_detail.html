@@ -122,6 +122,20 @@
         </div>
     </div>
 </div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 pl-5">
+            <form method="POST" action="{% url 'product_detail' product.id %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-info" type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
 <!-- Include related products -->
 {% include 'products/includes/related_products.html' %}
 

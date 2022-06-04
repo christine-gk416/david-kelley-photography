@@ -3,8 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
 
 import random
 
@@ -46,6 +46,21 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review = form.save()
+            messages.success(request, 'Successfully added review!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to add review. Please ensure the \
+                           form is valid.')
+    else:
+        form = ReviewForm()
+
     # Get a list of  3 random products with unique id
     related_products = list(product.category.products.exclude(id=product.id))
 
@@ -54,6 +69,7 @@ def product_detail(request, product_id):
 
     context = {
         'product': product,
+        'form': form,
         'related_products': related_products
     }
 
