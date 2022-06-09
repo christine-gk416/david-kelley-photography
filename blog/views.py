@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator
 
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
@@ -12,9 +13,15 @@ def blog(request):
     comments = Comment.objects.all()
     posts = Post.objects.all()
 
+    paginator = Paginator(posts, 3) # Show 25 contacts per page.
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
         'posts': posts,
         'comments': comments,
+        'page_obj': page_obj,
     }
 
     return render(request, 'blog/all_posts.html', context)
